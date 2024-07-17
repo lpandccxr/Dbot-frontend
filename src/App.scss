@@ -1,0 +1,21 @@
+@use "./styles/typography" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
