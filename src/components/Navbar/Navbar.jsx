@@ -8,16 +8,22 @@ export default function Navbar() {
     <nav className="navbar">
       <ul className="navbar__itemList">
         <li>
-          <img src={home} alt="Home" className="navbar__item" />
-          <span className="navbar__tooltiptext">Home</span>
+          <a href="#home">
+            <img src={home} alt="Home" className="navbar__item" />
+            <span className="navbar__tooltiptext">Home</span>
+          </a>
         </li>
         <li>
-          <img src={command} alt="Command" className="navbar__item" />
-          <span className="navbar__tooltiptext">Command</span>
+          <a href="#command">
+            <img src={command} alt="Command" className="navbar__item" />
+            <span className="navbar__tooltiptext">Command</span>
+          </a>
         </li>
         <li>
-          <img src={about} alt="About" className="navbar__item" />
-          <span className="navbar__tooltiptext">About</span>
+          <a href="about">
+            <img src={about} alt="About" className="navbar__item" />
+            <span className="navbar__tooltiptext">About</span>
+          </a>
         </li>
       </ul>
     </nav>
