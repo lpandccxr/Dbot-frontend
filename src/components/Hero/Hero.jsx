@@ -41,8 +41,8 @@ export default function Hero() {
       <video
         className="hero__right"
         src={playing}
-        loop={true}
-        autoPlay={true}
+        loop={false}
+        autoPlay={false}
         muted={true}
       />
     </main>

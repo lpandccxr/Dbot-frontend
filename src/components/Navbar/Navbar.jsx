@@ -6,24 +6,27 @@ import about from "../../assets/icons/about.png";
 export default function Navbar() {
   return (
     <nav className="navbar">
+      <div className="navbar__close">
+        <span className="navbar__closebt">X</span> Close
+      </div>
       <ul className="navbar__itemList">
-        <li>
+        <li className="navbar__itemContainer">
           <a href="#home">
             <img src={home} alt="Home" className="navbar__item" />
-            <span className="navbar__tooltiptext">Home</span>
           </a>
+          <span className="navbar__tooltiptext">Home</span>
         </li>
-        <li>
+        <li className="navbar__itemContainer">
           <a href="#command">
             <img src={command} alt="Command" className="navbar__item" />
-            <span className="navbar__tooltiptext">Command</span>
           </a>
+          <span className="navbar__tooltiptext">Command</span>
         </li>
-        <li>
+        <li className="navbar__itemContainer">
           <a href="about">
             <img src={about} alt="About" className="navbar__item" />
-            <span className="navbar__tooltiptext">About</span>
           </a>
+          <span className="navbar__tooltiptext">About</span>
         </li>
       </ul>
     </nav>
