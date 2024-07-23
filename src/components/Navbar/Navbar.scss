@@ -14,17 +14,18 @@
   z-index: 1;
 
   @include mobile {
-    // display: none;
     background-color: rgb(32, 32, 32);
     border: none;
     width: 60%;
-    // left: -60%;
+    left: -60%;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 1s ease;
   }
 
   &__close {
     display: none;
+    border: none;
 
     @include mobile {
       display: block;

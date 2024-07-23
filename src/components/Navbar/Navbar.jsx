@@ -2,13 +2,18 @@ import "./Navbar.scss";
 import home from "../../assets/icons/home.png";
 import command from "../../assets/icons/command.png";
 import about from "../../assets/icons/about.png";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [nav, setNav] = useState({});
   return (
-    <nav className="navbar">
-      <div className="navbar__close">
+    <nav className="navbar" style={nav}>
+      <button
+        className="navbar__close"
+        onClick={() => setNav({ left: "-60%" })}
+      >
         <span className="navbar__closebt">X</span> Close
-      </div>
+      </button>
       <ul className="navbar__itemList">
         <li className="navbar__itemContainer">
           <a href="#home">
