@@ -4,11 +4,25 @@ import discord from "../../assets/icons/discord.png";
 import arrow from "../../assets/icons/arrow.svg";
 import landing from "../../assets/landing.jpg";
 import next from "../../assets/icons/next.png";
+import menu from "../../assets/icons/menu.svg";
 
-export default function Hero() {
+export default function Hero({ setNav }) {
   return (
     <main className="hero">
       <div className="hero__left">
+        <div className="hero__top">
+          <button className="hero__menu" onClick={() => setNav({ left: "0" })}>
+            <img src={menu} />
+          </button>
+          Able
+          <video
+            className="hero__vbg"
+            src={playing}
+            loop={false}
+            autoPlay={false}
+            muted={true}
+          />
+        </div>
         <h1 className="hero__title">
           <img className="hero__discord" src={discord} alt="discord" /> bot
           built for<span> d</span>isabled folks.
@@ -41,8 +55,8 @@ export default function Hero() {
       <video
         className="hero__right"
         src={playing}
-        loop={true}
-        autoPlay={true}
+        loop={false}
+        autoPlay={false}
         muted={true}
       />
     </main>
