@@ -11,7 +11,7 @@ export default function Hero({ setNav }) {
     <main className="hero">
       <div className="hero__left">
         <div className="hero__top">
-          <button className="hero__menu" onClick={() => setNav({ left: "0" })}>
+          <button className="hero__menu" onClick={() => setNav("navbar__on")}>
             <img src={menu} />
           </button>
           Able

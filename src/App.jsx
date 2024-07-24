@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Main from "./pages/Main/Main";
 
 function App() {
-  const [nav, setNav] = useState({});
+  const [nav, setNav] = useState("");
   return (
     <div className="app">
       <Navbar set={setNav} nav={nav} />
