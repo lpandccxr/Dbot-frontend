@@ -4,13 +4,12 @@ import command from "../../assets/icons/command.png";
 import about from "../../assets/icons/about.png";
 import { useState } from "react";
 
-export default function Navbar() {
-  const [nav, setNav] = useState({});
+export default function Navbar({ set, nav }) {
   return (
     <nav className="navbar" style={nav}>
       <button
         className="navbar__close"
-        onClick={() => setNav({ left: "-60%" })}
+        onClick={() => set({ left: "-60%"})}
       >
         <span className="navbar__closebt">X</span> Close
       </button>
