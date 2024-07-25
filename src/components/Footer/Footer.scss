@@ -1,0 +1,100 @@
+@use "../../styles/variables" as *;
+@use "../../styles/reset" as *;
+@use "../../styles/mixin" as *;
+
+.footer{
+    top: 0;
+    left: 0;
+    color: $white;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    &__container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include tablet{
+            flex-direction: row;
+        }
+
+    }
+    &__logo{
+        display: flex;
+        position: relative;
+    }
+    &__arrow-desktop{
+        display: none;
+        @include tablet{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    &__arrow-mobile{
+        display: flex;
+        position: absolute;
+        top:4rem;
+        right: 3rem;
+        @include tablet{
+            display: none;
+        }
+    }
+    &__arrow-a{
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    &__second{
+        display: flex;
+        @include tablet{
+            flex-direction: column;
+            flex-grow: 1;
+            padding-top: 4rem;
+            padding-right: 3rem;
+            justify-content: space-around;
+        }
+    }
+    &__nav{
+        display: flex;
+        width: 100%;
+        // justify-content: space-evenly;
+        &-left{
+            display: flex;
+            width: 50%;
+            justify-content: space-around;
+            @include tablet{
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 3rem;
+            }
+
+        }
+        &-right{
+            display: flex;
+            width: 50%;
+            justify-content: space-around;
+            @include tablet{
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 3rem;
+            }
+        }
+        &-team{
+            @include tablet{
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+    }
+}
+.arrow{
+    width: 25px;
+    height: 25px;
+}
+.logo{
+    @include tablet{
+        width:736px;
+        height:306px;
+    }
+}
