@@ -2,8 +2,28 @@ import "./Navbar.scss";
 import home from "../../assets/icons/home.png";
 import command from "../../assets/icons/command.png";
 import about from "../../assets/icons/about.png";
+import { useState, useEffect } from "react";
 
 export default function Navbar({ set, nav }) {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth > 480) {
+      set("");
+    }
+  });
+
   return (
     <nav className={"navbar " + nav}>
       <button className="navbar__close" onClick={() => set("navbar__off")}>

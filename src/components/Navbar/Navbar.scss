@@ -13,13 +13,6 @@
   position: fixed;
   z-index: 1;
 
-  @include tablet {
-    left: 0;
-  }
-  @include desktop {
-    left: 0;
-  }
-
   @include mobile {
     background-color: rgb(32, 32, 32);
     border: none;
@@ -27,18 +20,14 @@
     left: -60%;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.5s ease;
   }
 
   &__on {
     left: 0;
+    transition: all 0.5s ease;
   }
   &__off {
-    left: 0;
-
-    @include mobile {
-      left: -60%;
-    }
+    transition: all 0.5s ease;
   }
 
   &__close {
