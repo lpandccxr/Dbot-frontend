@@ -18,8 +18,8 @@ export default function Hero({ setNav }) {
           <video
             className="hero__vbg"
             src={playing}
-            loop={false}
-            autoPlay={false}
+            loop={true}
+            autoPlay={true}
             muted={true}
           />
         </div>
@@ -38,6 +38,7 @@ export default function Hero({ setNav }) {
               A discord bot made for disabled/ partially disabled people to
               communicate on discord with ease, efficiently.
             </p>
+            <img className="hero__landbg" src={landing} alt="landing" />
             <div className="hero__tabs">
               <div className="hero__tab">Read Text</div>
               <div className="hero__quarter" />
@@ -55,8 +56,8 @@ export default function Hero({ setNav }) {
       <video
         className="hero__right"
         src={playing}
-        loop={false}
-        autoPlay={false}
+        loop={true}
+        autoPlay={true}
         muted={true}
       />
     </main>
