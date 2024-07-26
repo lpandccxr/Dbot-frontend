@@ -20,6 +20,13 @@
     left: -60%;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  &__on {
+    left: 0;
+    transition: all 0.5s ease;
+  }
+  &__off {
     transition: all 0.5s ease;
   }
 

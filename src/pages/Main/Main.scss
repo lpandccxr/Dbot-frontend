@@ -2,16 +2,14 @@
 @use "../../styles/reset" as *;
 @use "../../styles/mixin" as *;
 
-.mainPage{
-    width: 100%;  
+.mainPage {
+  width: 100%;
   margin-left: 6rem;
   padding-left: 3rem;
   overflow-x: hidden;
-  z-index: 0;
 
   @include mobile {
     margin: 0;
     padding-left: 1.5rem;
   }
 }
-
