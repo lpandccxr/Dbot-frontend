@@ -6,6 +6,7 @@
   height: 700px;
   display: flex;
   position: relative;
+  padding-left: 1rem;
 
   @include mobile {
     height: max-content;

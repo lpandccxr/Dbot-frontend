@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import Main from "./pages/Main/Main";
-import Footer from "./components/Footer/Footer";
+import Commands from "./pages/Commands/Commands";
+import Team from "./pages/Team/Team";
 
 function App() {
   const [nav, setNav] = useState("");
@@ -11,13 +12,12 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Navbar set={setNav} nav={nav} />
-        <Routes>
+        <Routes className="container">
           <Route path="*" />
           <Route path="/" element={<Main setNav={setNav} />} />
-          <Route path="/commands" />
-          <Route path="/team" />
+          <Route path="/commands" element={<Commands />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );
