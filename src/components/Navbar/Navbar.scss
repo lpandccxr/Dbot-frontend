@@ -6,22 +6,24 @@
   top: 0;
   height: 100vh;
   width: 8%;
-  max-width: 6.5rem;
+  max-width: 7rem;
   border-right: 2px solid white;
   display: flex;
   justify-content: center;
   align-items: end;
-  position: fixed;
+  position: sticky;
   z-index: 1;
 
   @include mobile {
+    max-width: none;
     background-color: rgb(32, 32, 32);
     border: none;
     width: 60%;
+    position: absolute;
     left: -60%;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 50;
+    z-index: 20;
   }
 
   &__on {
@@ -72,6 +74,7 @@
 
     @include mobile {
       align-items: start;
+      margin-bottom: 1rem;
     }
   }
 
@@ -92,8 +95,10 @@
 
     @include mobile {
       display: flex;
+      align-items: end;
       width: 100%;
       padding: 0.5rem 0 0.5rem 15%;
+      margin-bottom: 1rem;
 
       &:hover {
         background-color: rgb(59, 84, 74);
@@ -104,6 +109,10 @@
   &__item {
     position: relative;
     width: 50%;
+
+    @include mobile {
+      width: 2.5rem;
+    }
   }
   &__tooltiptext {
     position: absolute;
@@ -137,6 +146,7 @@
       opacity: 1;
       background-color: transparent;
       position: relative;
+      line-height: 2rem;
     }
   }
 }

@@ -3,12 +3,17 @@
 
 .hero {
   width: 100%;
-  height: 700px;
+  padding-right: 20vw;
   display: flex;
+  justify-content: space-between;
   position: relative;
-  padding-left: 1rem;
+
+  @include hideVideo {
+    padding-right: 8vw;
+  }
 
   @include mobile {
+    padding: 0;
     height: max-content;
     margin-bottom: 2rem;
   }
@@ -16,13 +21,17 @@
   &__top {
     width: 100%;
     padding: 1rem 0;
-    font-size: 2rem;
-    text-align: center;
+    font-size: 3rem;
     font-weight: 500;
     position: relative;
+    display: flex;
+    justify-content: center;
 
     @include mobile {
+      font-size: 2rem;
       z-index: 10;
+      padding: 0 0 1.5rem 0;
+      margin-bottom: 3rem;
     }
   }
 
@@ -44,77 +53,99 @@
     @include mobile {
       display: block;
       position: absolute;
-      width: 100vw;
-      left: -1.5rem;
+      width: 102vw;
+      left: -6.5vw;
       bottom: 0.5rem;
       z-index: -1;
     }
   }
 
   &__left {
-    max-width: 50rem;
-    margin-right: 1rem;
-
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5vw;
     @include mobile {
       width: 100%;
     }
   }
 
-  &__right {
-    height: 100%;
-    right: -8%;
+  &__container {
+    width: 85%;
 
     @include mobile {
+      width: 100%;
+      padding: 1.5rem;
+    }
+  }
+
+  &__right {
+    position: absolute;
+    height: 100%;
+    width: 20vw;
+    right: 0;
+
+    @include hideVideo {
       display: none;
     }
   }
 
+  &__video {
+    height: 100%;
+    object-fit: cover;
+  }
+
   &__title {
     font-weight: 500;
-    font-size: 3.5rem;
-    line-height: 4rem;
+    font-size: 4.5vw;
+    line-height: 5.5vw;
+    font-weight: 400;
 
     @include mobile {
       font-size: 2.5rem;
-      line-height: 3rem;
-      font-weight: 400;
+      line-height: 3.5rem;
     }
 
     &::before {
       content: "Discord";
       color: $Light-steel-blue;
       font-weight: 500;
+      @include mobile {
+        font-size: 3.5rem;
+      }
     }
     & > span {
       font-family: "Gwendolyn";
       font-weight: 700;
-      font-size: 7.5rem;
-      margin-right: 0.5rem;
+      font-size: 10vw;
+      margin-right: 0.7vw;
 
       @include mobile {
         font-size: 5rem;
+        margin-right: 0.5rem;
       }
     }
   }
 
   &__discord {
-    width: 55px;
-    margin-left: 1rem;
+    width: 4vw;
+    margin-left: 1vw;
     margin-right: 0.2rem;
 
     @include mobile {
       width: 45px;
+      margin-left: 1rem;
     }
   }
   &__button {
     display: inline-block;
     position: relative;
     color: black;
-    font-size: 1.2rem;
-    font-weight: 400;
-    width: 13rem;
-    height: 3.5rem;
-    margin: 1rem 0 0 1rem;
+    font-size: 35%;
+    font-weight: 500;
+    width: 15vw;
+    height: 4.5vw;
+    margin: 1.5vw 0 0 1.5vw;
     background-color: $Pale-rose;
     text-align: center;
     border: none;
@@ -130,22 +161,27 @@
   }
 
   &__arrow {
+    width: 12%;
     position: absolute;
-    right: 10%;
-    top: 25%;
+    right: 8%;
+    top: 30%;
     @include mobile {
+      width: 15%;
       right: 6%;
-      top: 20%;
+      top: 21%;
     }
   }
 
   &__landing {
+    position: relative;
     display: flex;
     margin-top: 3rem;
   }
 
   &__landimg {
-    width: 330px;
+    width: 30vw;
+    height: 31vw;
+    object-fit: cover;
     border-radius: 10px;
 
     @include mobile {
@@ -161,23 +197,26 @@
       width: 100%;
       border-radius: 10px;
       margin-top: 3rem;
-      padding-right: 0.5rem;
     }
   }
 
   &__landdec {
     padding: 0 2rem;
+    height: 100%;
 
     @include mobile {
-      padding: 0;
+      padding: 0.5rem;
     }
 
     & > p {
-      width: 17rem;
+      font-size: 1.5vw;
       font-weight: 400;
       color: #f1f1f1;
 
       @include mobile {
+        font-weight: 400;
+        padding: 0 0.5rem;
+        font-size: 1.2rem;
         width: 100%;
       }
     }
@@ -187,53 +226,71 @@
     position: relative;
 
     @include mobile {
-      width: fit-content;
+      width: min-content;
       margin-top: -4.5rem;
-      background-color: black;
+      background-color: rgb(15, 15, 15);
       padding: 0.5rem 1.5rem 0 0;
-      border-top-right-radius: 70px 75px;
+      border-top-right-radius: 50px;
     }
   }
 
   &__tab {
-    width: 14rem;
-    padding: 1rem 0;
+    width: 21vw;
+    height: 4vw;
+    border: none;
+    color: white;
+    font-size: 1.3vw;
     font-family: inherit;
     font-weight: 500;
     text-align: center;
     border-radius: 5px;
-    margin-top: 1rem;
+    margin-top: 1.5vw;
     background-color: $Silver-tree;
-    margin-left: 4rem;
+    margin-left: 5vw;
 
     &:first-of-type {
       background-color: $Light-steel-blue;
       margin-left: 0;
     }
+
+    @include mobile {
+      font-size: 1rem;
+      width: 12rem;
+      height: 2.5rem;
+      margin-left: 3rem;
+      margin-bottom: 0.5rem;
+    }
   }
 
   &__quarter {
     position: absolute;
-    left: 15rem;
-    top: 0;
-    width: 46px;
-    height: 50px;
+    left: 22.5vw;
+    top: 1.5vw;
+    width: 3.5vw;
+    height: 4vw;
     background-color: $Pale-rose;
-    border-radius: 0 55px 0 0;
+    border-radius: 0 3vw 0 0;
 
     @include mobile {
-      top: 1.5rem;
+      width: 2rem;
+      height: 2.5rem;
+      left: 13rem;
+      top: 1rem;
+      border-radius: 0 2rem 0 0;
     }
   }
 
   &__next {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 1.5rem;
     text-decoration: underline;
-    margin-top: 6rem;
-    font-size: 1.3rem;
+    padding-right: 1vw;
+    font-size: 1.5vw;
 
     & > span {
       @include mobile {
@@ -241,12 +298,13 @@
       }
     }
     @include mobile {
-      margin-top: -3rem;
-      margin-right: 1rem;
+      margin-bottom: -3rem;
+      margin-right: 0.5rem;
     }
   }
   &__nextbt {
-    height: 2.5rem;
+    height: 3vw;
+    margin-left: 1vw;
 
     @include mobile {
       height: 3rem;

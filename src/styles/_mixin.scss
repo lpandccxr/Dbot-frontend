@@ -22,6 +22,12 @@
   }
 }
 
+@mixin hideVideo {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin text-style($size, $line-height, $weight) {
   font-size: $size;
   line-height: $line-height;
