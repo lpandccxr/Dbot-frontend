@@ -4,25 +4,14 @@ import discord from "../../assets/icons/discord.png";
 import arrow from "../../assets/icons/arrow.svg";
 import landing from "../../assets/landing.jpg";
 import next from "../../assets/icons/next.png";
-import menu from "../../assets/icons/menu.svg";
 
-export default function Hero({ setNav }) {
+export default function Hero() {
   return (
     <main className="hero">
       <div className="hero__left">
         <div className="hero__container">
           <div className="hero__top">
-            <button className="hero__menu" onClick={() => setNav("navbar__on")}>
-              <img src={menu} />
-            </button>
             <span>Able</span>
-            <video
-              className="hero__vbg"
-              src={playing}
-              loop={true}
-              autoPlay={true}
-              muted={true}
-            />
           </div>
           <h1 className="hero__title">
             <img className="hero__discord" src={discord} alt="discord" /> bot
