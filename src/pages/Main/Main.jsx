@@ -5,10 +5,10 @@ import Footer from "../../components/Footer/Footer";
 
 import "./Main.scss";
 
-export default function Main({ setNav }) {
+export default function Main() {
   return (
     <div className="mainPage">
-      <Hero setNav={setNav} />
+      <Hero />
       <Features />
       <ActionSection />
       <Footer />

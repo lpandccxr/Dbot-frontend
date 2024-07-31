@@ -1,5 +1,5 @@
 @use "./styles/variables" as *;
-@use "./styles/variables" as *;
+@use "./styles/mixin" as *;
 
 * {
   box-sizing: border-box;
@@ -19,4 +19,8 @@ body {
   background-color: rgba(0, 0, 0, 0.941);
   color: white;
   display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }

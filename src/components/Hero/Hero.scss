@@ -13,7 +13,7 @@
   }
 
   @include mobile {
-    padding: 0;
+    padding: 6rem 0 0 0;
     height: max-content;
     margin-bottom: 2rem;
   }
@@ -28,10 +28,11 @@
     justify-content: center;
 
     @include mobile {
-      font-size: 2rem;
-      z-index: 10;
-      padding: 0 0 1.5rem 0;
-      margin-bottom: 3rem;
+      // font-size: 2rem;
+      // z-index: 10;
+      // padding: 0 0 1.5rem 0;
+      // margin-bottom: 3rem;
+      display: none;
     }
   }
 
@@ -44,19 +45,6 @@
       background-color: transparent;
       position: absolute;
       left: 0;
-    }
-  }
-
-  &__vbg {
-    display: none;
-
-    @include mobile {
-      display: block;
-      position: absolute;
-      width: 102vw;
-      left: -6.5vw;
-      bottom: 0.5rem;
-      z-index: -1;
     }
   }
 
