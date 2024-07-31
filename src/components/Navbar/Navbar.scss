@@ -5,22 +5,25 @@
   left: 0;
   top: 0;
   height: 100vh;
-  width: 6rem;
+  width: 8%;
+  max-width: 7rem;
   border-right: 2px solid white;
   display: flex;
   justify-content: center;
   align-items: end;
-  position: fixed;
+  position: sticky;
   z-index: 1;
 
   @include mobile {
+    max-width: none;
     background-color: rgb(32, 32, 32);
     border: none;
     width: 60%;
+    position: absolute;
     left: -60%;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 50;
+    z-index: 20;
   }
 
   &__on {
@@ -68,16 +71,23 @@
     margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     @include mobile {
       align-items: start;
+      margin-bottom: 1rem;
     }
   }
 
   &__itemContainer {
+    width: 100%;
     position: relative;
-    margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 40%;
+
+    &:hover > span {
+      visibility: visible;
+      opacity: 1;
+    }
 
     &:nth-child(3) {
       margin-bottom: 0;
@@ -85,8 +95,10 @@
 
     @include mobile {
       display: flex;
+      align-items: end;
       width: 100%;
       padding: 0.5rem 0 0.5rem 15%;
+      margin-bottom: 1rem;
 
       &:hover {
         background-color: rgb(59, 84, 74);
@@ -96,16 +108,15 @@
 
   &__item {
     position: relative;
-    width: 2.5rem;
+    width: 50%;
 
-    &:hover + span {
-      visibility: visible;
-      opacity: 1;
+    @include mobile {
+      width: 2.5rem;
     }
   }
   &__tooltiptext {
     position: absolute;
-    margin-top: 0.4rem;
+    margin-top: 8%;
     margin-left: 1rem;
     padding: 0.3rem 0.8rem;
     background-color: $Silver-tree;
@@ -135,6 +146,7 @@
       opacity: 1;
       background-color: transparent;
       position: relative;
+      line-height: 2rem;
     }
   }
 }
