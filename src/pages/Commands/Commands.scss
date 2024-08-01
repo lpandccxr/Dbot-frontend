@@ -1,0 +1,55 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixin" as *;
+
+.commands {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    height: 55vw;
+    padding: 0 5vw;
+  }
+
+  &__title {
+    font-size: 5vw;
+
+    & > span {
+      font-size: 11vw;
+      font-family: "Gwendolyn";
+      font-weight: 700;
+      margin-right: 0.7rem;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    gap: 3vw 3.1vw;
+  }
+
+  &__item {
+    box-sizing: border-box;
+    color: white;
+    width: 33vw;
+    height: 5.4vw;
+    border-radius: 3px;
+    font-size: 1.3vw;
+    border: 1px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+    padding: 0 2.5vw;
+
+    & > h4 {
+      font-size: 1.9vw;
+      margin-right: 2.5vw;
+    }
+    & > span {
+      font-size: 1.3vw;
+    }
+  }
+}
