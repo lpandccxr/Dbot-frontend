@@ -3,24 +3,42 @@
 
 .commands {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  @include mobile {
+    overflow-x: hidden;
+  }
+
   &__container {
     height: 55vw;
     padding: 0 5vw;
+
+    @include mobile {
+      height: 100%;
+      margin-top: 15vw;
+    }
   }
 
   &__title {
     font-size: 5vw;
+
+    @include mobile {
+      font-size: 8vw;
+      margin-bottom: 2vw;
+    }
 
     & > span {
       font-size: 11vw;
       font-family: "Gwendolyn";
       font-weight: 700;
       margin-right: 0.7rem;
+
+      @include mobile {
+        font-size: 18vw;
+        margin-right: 0.5rem;
+      }
     }
   }
 
@@ -30,6 +48,13 @@
     grid-template-columns: repeat(2, 1fr);
     width: fit-content;
     gap: 3vw 3.1vw;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 5vw;
+      width: 100%;
+    }
   }
 
   &__item {
@@ -44,12 +69,26 @@
     align-items: center;
     padding: 0 2.5vw;
 
+    @include mobile {
+      width: 72vw;
+      height: 12vw;
+      padding-left: 4vw;
+    }
+
     & > h4 {
       font-size: 1.9vw;
       margin-right: 2.5vw;
+
+      @include mobile {
+        font-size: 5vw;
+      }
     }
     & > span {
       font-size: 1.3vw;
+
+      @include mobile {
+        font-size: 3.1vw;
+      }
     }
   }
 }
