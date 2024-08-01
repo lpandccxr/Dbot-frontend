@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         <div className="footer__second">
           <div className="footer__arrow-desktop">
-            <a href="#">
+            <a className="footer__arrow-desktop-img" href="#">
               <img className="arrow" src={arrow} alt="arrow" />
               <a href="#">Go to top</a>
             </a>
