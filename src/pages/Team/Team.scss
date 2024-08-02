@@ -1,3 +1,110 @@
 .team {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1vw;
+  overflow-x: hidden;
+
+  &__content {
+    width: 100%;
+    display: flex;
+  }
+
+  &__request {
+    width: 35%;
+    padding: 2vw;
+
+    & > h1 {
+      font-size: 5vw;
+      margin-bottom: 1vw;
+    }
+
+    & > p {
+      font-size: 1.25vw;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5vw;
+  }
+
+  &__inputBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vw;
+
+    & > label {
+      font-size: 1.25vw;
+      font-weight: 500;
+      margin-bottom: 0.5vw;
+    }
+
+    & > input {
+      width: 24vw;
+      height: 3.3vw;
+      font-size: 1.3vw;
+      padding: 0 1vw;
+      font-family: inherit;
+    }
+
+    & > textarea {
+      width: 24vw;
+      height: 7.7vw;
+      background: linear-gradient(rgba(51, 48, 48, 65%), rgba(51, 48, 48, 65%)),
+        url("../../assets/inputBg.png");
+      background-size: cover;
+      border: 1px solid #f1f1f1;
+      font-size: 1.3vw;
+      padding: 0.5vw 1vw;
+      font-family: inherit;
+      color: #f1f1f1;
+    }
+  }
+
+  /////members
+  &__members {
+    height: 43vw;
+    width: 65%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  &__member {
+    max-height: 44.6vw;
+    max-width: 32.5vw;
+    margin-right: 5vw;
+    flex: 0 0 auto;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+    overflow: hidden;
+
+    & > img {
+      width: 32.5vw;
+      height: 32.6vw;
+      object-fit: cover;
+    }
+  }
+
+  &__dec {
+    & > p {
+      padding: 0 2vw 0 2vw;
+      font-size: 0.9vw;
+      line-height: 1.3vw;
+    }
+  }
+
+  &__position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5vw 2vw;
+    font-size: 1vw;
+
+    & > h3 {
+      font-size: 2vw;
+    }
+  }
 }
