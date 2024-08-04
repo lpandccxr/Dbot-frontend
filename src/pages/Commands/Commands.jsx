@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer/Footer";
 import "./Commands.scss";
+import { motion } from "framer-motion";
 
 export default function Commands() {
   const list = [
@@ -85,14 +86,19 @@ export default function Commands() {
         <h1 className="commands__title">
           Commands <span>l</span>ist
         </h1>
-        <div className="commands__list">
+        <motion.div
+          className="commands__list"
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+        >
           {list.map((item, index) => (
             <div className="commands__item" style={item.style} key={index}>
               <h4>{item.command}</h4>
               <span>{item.dec}</span>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <Footer />
     </div>

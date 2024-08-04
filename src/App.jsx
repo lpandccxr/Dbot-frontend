@@ -6,12 +6,14 @@ import Main from "./pages/Main/Main";
 import Commands from "./pages/Commands/Commands";
 import Team from "./pages/Team/Team";
 import MobileNav from "./components/MobileNav/MobileNav";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   const [nav, setNav] = useState("");
   return (
     <div className="app">
       <BrowserRouter>
+        <ScrollToTop />
         <MobileNav setNav={setNav} />
         <Navbar set={setNav} nav={nav} />
         <Routes className="container">
