@@ -2,6 +2,7 @@ import "./Team.scss";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import sample from "../../assets/sample.png";
+import { motion } from "framer-motion";
 
 export default function Team() {
   const memebrs = [
@@ -47,7 +48,12 @@ export default function Team() {
       <div className="hero__top">
         <span>Able</span>
       </div>
-      <div className="team__content">
+      <motion.div
+        className="team__content"
+        initial={{ y: "100%", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.5 }}
+      >
         <div className="team__request">
           <h1>Meet the Team</h1>
           <p>
@@ -82,7 +88,7 @@ export default function Team() {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
       <Footer />
     </div>
   );

@@ -87,7 +87,7 @@
 
     & > textarea {
       width: 24vw;
-      height: 7.7vw;
+      height: 12.5vw;
       background: linear-gradient(rgba(51, 48, 48, 65%), rgba(51, 48, 48, 65%)),
         url("../../assets/inputBg.png");
       background-size: cover;
@@ -153,8 +153,8 @@
   &__dec {
     & > p {
       padding: 0 2vw 0 2vw;
-      font-size: 0.9vw;
-      line-height: 1.3vw;
+      font-size: 1vw;
+      line-height: 1.5vw;
 
       @include mobile {
         padding: 0 0.5rem 1rem 0.8rem;
