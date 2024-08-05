@@ -5,7 +5,6 @@ import arrow from "../../assets/icons/arrow.svg";
 import landing from "../../assets/landing.jpg";
 import next from "../../assets/icons/next.png";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 export default function Hero({ theRef }) {
   const handleNext = () => {
