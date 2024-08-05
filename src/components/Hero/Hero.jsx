@@ -5,8 +5,12 @@ import arrow from "../../assets/icons/arrow.svg";
 import landing from "../../assets/landing.jpg";
 import next from "../../assets/icons/next.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-export default function Hero() {
+export default function Hero({ theRef }) {
+  const handleNext = () => {
+    theRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <main className="hero">
       <div className="hero__left">
@@ -40,11 +44,11 @@ export default function Hero() {
                   <div className="hero__quarter" />
                   <button className="hero__tab">Transcribe text</button>
                 </div>
-                <div className="hero__next">
+                <div className="hero__next" onClick={handleNext}>
                   <span>See all features</span>
-                  <a href="#features">
+                  <div>
                     <img src={next} alt="next" className="hero__nextbt" />
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
