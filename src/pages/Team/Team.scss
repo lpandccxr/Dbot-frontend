@@ -15,13 +15,13 @@
 
   &__content {
     width: 100%;
-    height: 100vh;
     display: flex;
     position: relative;
 
     @include mobile {
       height: 100%;
       flex-direction: column;
+      margin-bottom: 10vw;
     }
   }
 
@@ -112,10 +112,12 @@
     width: 65%;
     display: flex;
     flex-wrap: nowrap;
+    padding-left: 2vw;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    position: relative;
 
     @include mobile {
       width: 90%;
@@ -135,11 +137,11 @@
     scroll-snap-align: start;
 
     &:last-child {
-      margin-right: 25vw;
+      margin-right: 32.5vw;
     }
 
     @include mobile {
-      max-width: 90%;
+      width: 90%;
       max-height: none;
       height: fit-content;
     }
@@ -191,10 +193,23 @@
   }
 
   &__buttons {
-    width: 100%;
     position: absolute;
-    bottom: 6vw;
-    left: 80vw;
+    bottom: 0;
+    left: 80%;
+    display: flex;
+
+    @include mobile {
+      left: 30%;
+      bottom: -5%;
+    }
+
+    & > img {
+      width: 4vw;
+
+      @include mobile {
+        width: 4rem;
+      }
+    }
 
     & > img:active {
       opacity: 0.8;

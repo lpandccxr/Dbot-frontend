@@ -8,13 +8,14 @@ import { useRef } from "react";
 
 export default function Main() {
   const toFeatures = useRef(null);
+  const toTop = useRef(null);
 
   return (
     <div className="mainPage">
-      <Hero theRef={toFeatures} />
+      <Hero theRef={toFeatures} top={toTop} />
       <Features theRef={toFeatures} />
       <ActionSection />
-      <Footer />
+      <Footer top={toTop} />
     </div>
   );
 }

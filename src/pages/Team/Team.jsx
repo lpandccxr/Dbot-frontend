@@ -83,7 +83,13 @@ export default function Team() {
 
         <div className="team__members" ref={memberRef}>
           {memebrs.map((member, index) => (
-            <div className="team__member" key={index}>
+            <motion.div
+              className="team__member"
+              key={index}
+              initial={{ scale: 0.9, opacity: 0.8 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ root: memberRef, amount: 1 }}
+            >
               <img src={member.avatar} alt="avatar" />
               <div className="team__dec">
                 <div className="team__position">
@@ -94,10 +100,9 @@ export default function Team() {
                 </div>
                 <p>{member.dec}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-
         <div className="team__buttons">
           <img
             src={back}

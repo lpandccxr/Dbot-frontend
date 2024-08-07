@@ -6,12 +6,12 @@ import landing from "../../assets/landing.jpg";
 import next from "../../assets/icons/next.png";
 import { motion } from "framer-motion";
 
-export default function Hero({ theRef }) {
+export default function Hero({ theRef, top }) {
   const handleNext = () => {
     theRef.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <main className="hero">
+    <main className="hero" ref={top}>
       <div className="hero__left">
         <div className="hero__container">
           <div className="hero__top">
@@ -64,7 +64,7 @@ export default function Hero({ theRef }) {
           className="hero__video"
           src={playing}
           loop={true}
-          autoPlay={false}
+          autoPlay={true}
           muted={true}
         />
       </motion.div>
