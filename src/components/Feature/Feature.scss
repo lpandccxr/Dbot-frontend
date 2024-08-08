@@ -5,7 +5,7 @@
   width: 100%;
   color: black;
   padding-left: 5vw;
-  padding-bottom: 3vw;
+  padding-bottom: 5vw;
   overflow: hidden;
 
   @include mobile {
@@ -116,7 +116,7 @@
 
   &__cardTwo {
     width: 50vw;
-    height: 18vw;
+    height: 18.5vw;
     display: flex;
     border-radius: 20px;
     overflow: hidden;
@@ -159,7 +159,7 @@
       }
     }
     & > p {
-      font-size: 1.1vw;
+      font-size: 1.2vw;
       @include mobile {
         font-size: 0.8rem;
       }
