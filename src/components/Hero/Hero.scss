@@ -3,7 +3,8 @@
 
 .hero {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
+  overflow: hidden;
   padding-right: 20vw;
   display: flex;
   justify-content: space-between;
@@ -69,6 +70,7 @@
     height: 100%;
     width: 23vw;
     right: 0;
+    overflow: hidden;
 
     @include hideVideo {
       display: none;
@@ -161,6 +163,7 @@
     position: relative;
     display: flex;
     margin-top: 3rem;
+    overflow: hidden;
   }
 
   &__landimg {

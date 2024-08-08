@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./Features.scss";
 import transcript from "./../../assets/features-transcription-img.png";
 import talkback from "./../../assets/features-talkback-img.png";

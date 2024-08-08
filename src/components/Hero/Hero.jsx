@@ -64,7 +64,7 @@ export default function Hero({ theRef, top }) {
           className="hero__video"
           src={playing}
           loop={true}
-          autoPlay={true}
+          autoPlay={false}
           muted={true}
         />
       </motion.div>

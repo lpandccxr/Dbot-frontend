@@ -1,6 +1,5 @@
 import Hero from "../../components/Hero/Hero";
-import Features from "../../components/Features/Features";
-import ActionSection from "../../components/ActionSection/ActionSection";
+import Feature from "../../components/Feature/Feature";
 import Footer from "../../components/Footer/Footer";
 
 import "./Main.scss";
@@ -13,8 +12,7 @@ export default function Main() {
   return (
     <div className="mainPage">
       <Hero theRef={toFeatures} top={toTop} />
-      <Features theRef={toFeatures} />
-      <ActionSection />
+      <Feature toFeature={toFeatures} />
       <Footer top={toTop} />
     </div>
   );
