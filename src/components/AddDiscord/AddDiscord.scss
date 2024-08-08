@@ -1,0 +1,78 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixin" as *;
+
+.discord {
+  display: flex;
+  justify-content: center;
+  padding-top: 5vw;
+
+  @include mobile {
+    padding-top: 4rem;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      height: fit-content;
+    }
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    width: 60%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mobile {
+      font-size: 2rem;
+      width: 92%;
+      height: fit-content;
+      margin-left: 2rem;
+    }
+
+    & > p > span {
+      font-weight: 500;
+    }
+  }
+
+  &__link {
+    color: black;
+    width: fit-content;
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: $Pale-rose;
+    padding: 2rem 7rem;
+    border-radius: 10px;
+
+    @include mobile {
+      width: 80%;
+      font-size: 1.5rem;
+      padding: 1rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    &:active {
+      scale: 1.05;
+    }
+  }
+
+  &__img {
+    height: 100%;
+
+    @include mobile {
+      height: 20rem;
+      width: 100%;
+      margin: -2rem 0 -2rem -2rem;
+    }
+  }
+}

@@ -3,8 +3,17 @@ import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import sample from "../../assets/sample.png";
 import { motion } from "framer-motion";
+import back from "../../assets/icons/back.svg";
+import forward from "../../assets/icons/forward.svg";
+import { useRef } from "react";
 
 export default function Team() {
+  const memberRef = useRef(null);
+
+  const scrollMember = (move) => {
+    memberRef.current.scrollBy(move);
+  };
+
   const memebrs = [
     {
       name: "Dan",
@@ -72,9 +81,15 @@ export default function Team() {
           </form>
         </div>
 
-        <div className="team__members">
+        <div className="team__members" ref={memberRef}>
           {memebrs.map((member, index) => (
-            <div className="team__member" key={index}>
+            <motion.div
+              className="team__member"
+              key={index}
+              initial={{ scale: 0.9, opacity: 0.8 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ root: memberRef, amount: 1 }}
+            >
               <img src={member.avatar} alt="avatar" />
               <div className="team__dec">
                 <div className="team__position">
@@ -85,8 +100,32 @@ export default function Team() {
                 </div>
                 <p>{member.dec}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
+        </div>
+        <div className="team__buttons">
+          <img
+            src={back}
+            alt="back"
+            onClick={() =>
+              scrollMember({
+                top: 0,
+                left: -100,
+                behavior: "smooth",
+              })
+            }
+          />
+          <img
+            src={forward}
+            alt="forward"
+            onClick={() =>
+              scrollMember({
+                top: 0,
+                left: 100,
+                behavior: "smooth",
+              })
+            }
+          />
         </div>
       </motion.div>
       <Footer />

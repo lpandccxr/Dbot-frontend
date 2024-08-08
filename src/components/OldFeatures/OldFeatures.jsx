@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./Features.scss";
 import transcript from "./../../assets/features-transcription-img.png";
 import talkback from "./../../assets/features-talkback-img.png";
 import community from "./../../assets/features-community-img.png";
 
-export default function Features() {
+export default function Features({ theRef }) {
   const [activeTooltip, setActiveTooltip] = useState(null);
   const handleTooltipToggle = (index) => {
     setActiveTooltip(activeTooltip === index ? null : index);
   };
   return (
-    <>
+    <div ref={theRef}>
       <section className="features">
         <div className="features__upper">
           <h2 className="features__title">Features</h2>
@@ -32,12 +32,14 @@ export default function Features() {
             {
               img: talkback,
               name: "Talk Back",
-              tooltip: "The bot reads text-aloud and can also vocalize a user's response,enhancing interaction.",
+              tooltip:
+                "The bot reads text-aloud and can also vocalize a user's response,enhancing interaction.",
             },
             {
               img: community,
               name: "Community",
-              tooltip: "In addition to exceptional user support,we are an inclusive,friendly community that welcomes everyone.",
+              tooltip:
+                "In addition to exceptional user support,we are an inclusive,friendly community that welcomes everyone.",
             },
           ].map((feature, index) => (
             <div
@@ -60,7 +62,7 @@ export default function Features() {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

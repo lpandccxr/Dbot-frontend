@@ -3,10 +3,13 @@
 
 .hero {
   width: 100%;
+  height: fit-content;
+  min-height: 100vh;
   padding-right: 20vw;
   display: flex;
   justify-content: space-between;
   position: relative;
+  scrollbar-width: none;
 
   @include hideVideo {
     padding-right: 8vw;
@@ -28,10 +31,6 @@
     justify-content: center;
 
     @include mobile {
-      // font-size: 2rem;
-      // z-index: 10;
-      // padding: 0 0 1.5rem 0;
-      // margin-bottom: 3rem;
       display: none;
     }
   }
@@ -70,8 +69,9 @@
   &__right {
     position: absolute;
     height: 100%;
-    width: 20vw;
+    width: 23vw;
     right: 0;
+    overflow: hidden;
 
     @include hideVideo {
       display: none;
