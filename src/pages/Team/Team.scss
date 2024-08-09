@@ -113,10 +113,7 @@
     display: flex;
     flex-wrap: nowrap;
     padding-left: 2vw;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
+    overflow-x: hidden;
     position: relative;
 
     @include mobile {
@@ -134,7 +131,6 @@
     background-color: rgb(32, 32, 32);
     border-radius: 10px;
     overflow: hidden;
-    scroll-snap-align: start;
 
     &:last-child {
       margin-right: 32.5vw;

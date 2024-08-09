@@ -2,16 +2,43 @@ import "./Team.scss";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import sample from "../../assets/sample.png";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import back from "../../assets/icons/back.svg";
 import forward from "../../assets/icons/forward.svg";
-import { useRef } from "react";
+import { useEffect, useState } from "react";
 
 export default function Team() {
-  const memberRef = useRef(null);
+  const [imgIndex, setImgIndex] = useState(0);
+  const [dargging, setDargging] = useState(false);
+  const [head, setHead] = useState(true);
+  const [end, setEnd] = useState(false);
+  const dragX = useMotionValue();
 
-  const scrollMember = (move) => {
-    memberRef.current.scrollBy(move);
+  useEffect(() => {
+    if (imgIndex === 0) {
+      setHead(true);
+    } else if (imgIndex === memebrs.length - 1) {
+      setEnd(true);
+    } else {
+      setHead(false);
+      setEnd(false);
+    }
+  }, [imgIndex]);
+
+  const dragStart = () => {
+    setDargging(true);
+  };
+
+  const dargEnd = () => {
+    setDargging(false);
+
+    const x = dragX.get();
+
+    if (x <= -50 && imgIndex < memebrs.length - 1) {
+      setImgIndex((pv) => pv + 1);
+    } else if (x >= 50 && imgIndex > 0) {
+      setImgIndex((pv) => pv - 1);
+    }
   };
 
   const memebrs = [
@@ -81,14 +108,27 @@ export default function Team() {
           </form>
         </div>
 
-        <div className="team__members" ref={memberRef}>
+        <motion.div className="team__members">
           {memebrs.map((member, index) => (
             <motion.div
               className="team__member"
               key={index}
-              initial={{ scale: 0.9, opacity: 0.8 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ root: memberRef, amount: 1 }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              style={{ x: dragX }}
+              onDragStart={dragStart}
+              onDragEnd={dargEnd}
+              animate={{
+                translateX: `-${imgIndex * 115}%`,
+                scale: imgIndex === index ? 1 : 0.9,
+                opacity: imgIndex === index ? 1 : 0.7,
+              }}
+              transition={{
+                type: "spring",
+                mass: 3,
+                stiffness: 400,
+                damping: 50,
+              }}
             >
               <img src={member.avatar} alt="avatar" />
               <div className="team__dec">
@@ -102,29 +142,19 @@ export default function Team() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className="team__buttons">
           <img
             src={back}
             alt="back"
-            onClick={() =>
-              scrollMember({
-                top: 0,
-                left: -100,
-                behavior: "smooth",
-              })
-            }
+            onClick={() => setImgIndex((pv) => pv - 1)}
+            style={head ? { opacity: "0.7", pointerEvents: "none" } : {}}
           />
           <img
             src={forward}
             alt="forward"
-            onClick={() =>
-              scrollMember({
-                top: 0,
-                left: 100,
-                behavior: "smooth",
-              })
-            }
+            onClick={() => setImgIndex((pv) => pv + 1)}
+            style={end ? { opacity: "0.7", pointerEvents: "none" } : {}}
           />
         </div>
       </motion.div>
