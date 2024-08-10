@@ -8,6 +8,7 @@
   flex-direction: column;
   margin-left: 1vw;
   overflow-x: hidden;
+  overflow-y: hidden;
 
   @include mobile {
     margin-top: 20vw;
