@@ -5,13 +5,14 @@
   display: flex;
   justify-content: center;
   padding-top: 5vw;
+  margin-bottom: 2vw;
 
   @include mobile {
     padding-top: 4rem;
   }
 
   &__container {
-    width: 100%;
+    width: 90%;
     max-width: 1440px;
     display: flex;
     justify-content: space-between;
@@ -25,12 +26,13 @@
   }
 
   &__title {
-    font-size: 3.5rem;
+    font-size: 3vw;
     width: 60%;
     height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 2vw;
 
     @include mobile {
       font-size: 2rem;
@@ -47,11 +49,12 @@
   &__link {
     color: black;
     width: fit-content;
-    font-size: 2rem;
+    font-size: 2vw;
     font-weight: 600;
     background-color: $Pale-rose;
-    padding: 2rem 7rem;
+    padding: 2vw 7vw;
     border-radius: 10px;
+    margin-top: 2vw;
 
     @include mobile {
       width: 80%;
@@ -67,7 +70,7 @@
   }
 
   &__img {
-    height: 100%;
+    width: 40%;
 
     @include mobile {
       height: 20rem;
