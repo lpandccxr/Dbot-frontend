@@ -1,10 +1,10 @@
 import "./Hero.scss";
-import playing from "../../assets/3d-animation.mp4";
 import discord from "../../assets/icons/discord.png";
 import arrow from "../../assets/icons/arrow.svg";
+import arrowDown from "../../assets/icons/arrow-down.svg";
 import landing from "../../assets/landing.jpg";
-import next from "../../assets/icons/next.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Hero({ theRef, top }) {
   const handleNext = () => {
@@ -12,62 +12,43 @@ export default function Hero({ theRef, top }) {
   };
   return (
     <main className="hero" ref={top}>
-      <div className="hero__left">
-        <div className="hero__container">
-          <div className="hero__top">
-            <span>Able</span>
-          </div>
+      <div className="hero__container">
+        <div className="hero__top">
+          <span>Ablebot</span>
+        </div>
+        <div className="hero__content">
           <motion.div
+            className="hero__left"
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, type: "spring" }}
           >
             <h1 className="hero__title">
-              <img className="hero__discord" src={discord} alt="discord" /> bot
-              built for<span> d</span>isabled folks.
-              <button className="hero__button">
-                Get Started
-                <img className="hero__arrow" src={arrow} />
-              </button>
+              Empowering <span>Disabled</span> Individuals with Able Bot
             </h1>
-            <div className="hero__landing">
-              <img className="hero__landimg" src={landing} alt="landing" />
-              <div className="hero__landdec">
-                <p>
-                  A discord bot made for disabled/ partially disabled people to
-                  communicate on discord with ease, efficiently.
-                </p>
-                <img className="hero__landbg" src={landing} alt="landing" />
-                <div className="hero__tabs">
-                  <button className="hero__tab">Read Text</button>
-                  <div className="hero__quarter" />
-                  <button className="hero__tab">Transcribe text</button>
-                </div>
-                <div className="hero__next" onClick={handleNext}>
-                  <span>See all features</span>
-                  <div>
-                    <img src={next} alt="next" className="hero__nextbt" />
-                  </div>
-                </div>
-              </div>
+            <p>
+              Discord bot designed to empower disabled and partially disabled
+              users by making communication seamless and efficient
+            </p>
+            <button>
+              Get Started <img src={arrow} alt="arrow" />
+            </button>
+          </motion.div>
+          <motion.div
+            className="hero__right"
+            initial={{ opacity: 0, right: -500 }}
+            animate={{ opacity: 1, right: 0 }}
+            transition={{ duration: 1, delay: 0.5, type: "spring" }}
+          >
+            <img src={landing} alt="landing" className="hero__image" />
+            <div className="hero__next">
+              <button onClick={handleNext}>
+                <img src={arrowDown} alt="down" />
+              </button>
             </div>
           </motion.div>
         </div>
       </div>
-      <motion.div
-        className="hero__right"
-        initial={{ opacity: 0, right: -500 }}
-        animate={{ opacity: 1, right: 0 }}
-        transition={{ duration: 1, delay: 0.5, type: "spring" }}
-      >
-        <video
-          className="hero__video"
-          src={playing}
-          loop={true}
-          autoPlay={false}
-          muted={true}
-        />
-      </motion.div>
     </main>
   );
 }
