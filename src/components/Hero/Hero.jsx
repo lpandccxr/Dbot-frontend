@@ -4,7 +4,6 @@ import arrow from "../../assets/icons/arrow.svg";
 import arrowDown from "../../assets/icons/arrow-down.svg";
 import landing from "../../assets/landing.jpg";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 export default function Hero({ theRef, top }) {
   const handleNext = () => {
@@ -24,7 +23,12 @@ export default function Hero({ theRef, top }) {
             transition={{ duration: 1, delay: 0.5, type: "spring" }}
           >
             <h1 className="hero__title">
-              Empowering <span>Disabled</span> Individuals with Able Bot
+              Empowering{" "}
+              <span>
+                Disabled{" "}
+                <img src={discord} alt="discord" className="hero__discord" />{" "}
+              </span>{" "}
+              Individuals with Able Bot
             </h1>
             <p>
               Discord bot designed to empower disabled and partially disabled
