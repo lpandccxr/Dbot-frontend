@@ -2,7 +2,7 @@
 
 //Tablet breakpoint
 
-@mixin tablet {
+@mixin tabletMax {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-@mixin hideVideo {
+@mixin tablet {
   @media screen and (max-width: 1024px) {
     @content;
   }

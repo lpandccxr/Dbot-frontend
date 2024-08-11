@@ -3,74 +3,119 @@
 
 .footer {
   width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.689);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5vw;
-  height: 18vw;
+  justify-content: center;
 
-  @include mobile {
-    height: fit-content;
-    flex-direction: column;
+  &__container {
+    width: 90%;
+    max-width: 1440px;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 0;
+
+    @include mobile {
+      flex-direction: column;
+      padding-bottom: 2rem;
+    }
   }
 
   &__logo {
     height: 100%;
-    font-size: 15vw;
+    font-size: 3.5vw;
     font-weight: 500;
 
-    @include mobile {
-      font-size: 40vw;
-      line-height: 35vw;
+    @include tablet {
+      font-size: 2.5rem;
     }
-  }
 
-  &__right {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-    padding: 2vw;
+    @include mobile {
+      margin-right: 8rem;
+    }
+
+    & > p {
+      font-weight: 400;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.801);
+    }
   }
 
   &__goTop {
     display: flex;
     align-items: center;
     justify-content: end;
-    font-size: 1.3vw;
+    font-size: 1.1rem;
     text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 3vw;
+
+    @include mobile {
+      font-size: 1rem;
+      position: absolute;
+      right: 5vw;
+      top: 10vw;
+    }
 
     & > img {
-      width: 2vw;
+      width: 2rem;
       margin-right: 1vw;
 
       @include mobile {
         width: 1.5rem;
       }
     }
+    &:hover {
+      animation: move 0.8s linear infinite;
+    }
 
-    @include mobile {
-      font-size: 1rem;
-      position: absolute;
-      right: 5vw;
-      top: 4vw;
+    @keyframes move {
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateY(-0.3rem);
+      }
     }
   }
 
   &__links {
-    width: fit-content;
     font-size: 1.5vw;
     font-weight: 500;
-    display: grid;
-    grid-template-columns: 1fr 0.3fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 5vw;
-    grid-row-gap: 1vw;
+    display: flex;
 
     @include mobile {
+      margin-top: 1rem;
       font-size: 1rem;
-      display: flex;
+    }
+  }
+
+  &__link {
+    margin-right: 3vw;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: aqua;
+    }
+
+    &::before {
+      content: "";
+      height: 2vw;
+      width: 2vw;
+      background-color: aqua;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 0.5vw;
+
+      @include mobile {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: 0.5rem;
+      }
     }
   }
 }

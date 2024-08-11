@@ -11,7 +11,7 @@
   position: relative;
   scrollbar-width: none;
 
-  @include hideVideo {
+  @include tablet {
     padding-right: 8vw;
   }
 
@@ -73,7 +73,7 @@
     right: 0;
     overflow: hidden;
 
-    @include hideVideo {
+    @include tablet {
       display: none;
     }
   }
