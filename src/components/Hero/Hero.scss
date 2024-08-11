@@ -18,6 +18,7 @@
     padding-bottom: 10rem;
     position: relative;
     background-image: url("../../assets/landing.jpg");
+    background-position: center;
   }
 
   &__container {
@@ -64,6 +65,10 @@
       position: absolute;
       left: 0;
       top: 50%;
+
+      @include tablet {
+        width: 30%;
+      }
     }
   }
 
@@ -84,6 +89,7 @@
     @include mobile {
       width: 100%;
       padding: 0 5%;
+      margin-top: 4rem;
     }
 
     & > p {
@@ -92,8 +98,9 @@
       margin-bottom: 15%;
 
       @include mobile {
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-bottom: 7rem;
       }
     }
 
@@ -104,6 +111,11 @@
       border: none;
       background-color: $Pale-rose;
       position: relative;
+      font-weight: 500;
+
+      @include tablet {
+        font-size: 1.8rem;
+      }
 
       & > img {
         width: 15%;
@@ -121,6 +133,7 @@
 
     @include mobile {
       font-size: 3rem;
+      margin-bottom: 4rem;
     }
 
     & > span {
@@ -136,6 +149,10 @@
     width: 50%;
     height: 40vw;
     position: relative;
+
+    @include tablet {
+      height: 55vw;
+    }
 
     @include mobile {
       display: none;
