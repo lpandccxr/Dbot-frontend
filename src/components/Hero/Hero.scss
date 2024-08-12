@@ -3,299 +3,189 @@
 
 .hero {
   width: 100%;
-  height: fit-content;
-  min-height: 105vh;
-  padding-right: 20vw;
+  min-height: 101vh;
   display: flex;
-  justify-content: space-between;
-  position: relative;
-  scrollbar-width: none;
+  justify-content: center;
+  padding-bottom: 5vw;
 
-  @include hideVideo {
-    padding-right: 8vw;
+  @include tablet {
+    height: fit-content;
   }
 
   @include mobile {
-    padding: 6rem 0 0 0;
-    height: max-content;
-    margin-bottom: 2rem;
+    padding-top: 8rem;
+    min-height: auto;
+    padding-bottom: 10rem;
+    position: relative;
+    background-image: url("../../assets/landing.jpg");
+    background-position: center;
+  }
+
+  &__container {
+    width: 90%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      height: fit-content;
+    }
+
+    @include mobile {
+      height: fit-content;
+    }
   }
 
   &__top {
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     font-size: 3vw;
     font-weight: 500;
     position: relative;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 5;
 
     @include mobile {
       display: none;
     }
-  }
 
-  &__menu {
-    display: none;
+    & > span {
+      background-color: $background;
+      padding: 0 7vw 0.5rem 0;
+      border-radius: 20px;
+    }
 
-    @include mobile {
-      display: block;
-      border: none;
-      background-color: transparent;
+    &::before {
+      content: "";
+      width: 28rem;
+      height: 1px;
+      background-color: #f1f1f1;
       position: absolute;
       left: 0;
+      top: 50%;
+
+      @include tablet {
+        width: 30%;
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    margin-top: -3rem;
+
+    @include mobile {
+      flex-direction: column;
     }
   }
 
   &__left {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 5vw;
-    @include mobile {
-      width: 100%;
-    }
-  }
-
-  &__container {
-    width: 85%;
+    width: 50%;
+    padding: 5% 13% 0 0;
 
     @include mobile {
       width: 100%;
-      padding: 1.5rem;
+      padding: 0 5%;
+      margin-top: 4rem;
     }
-  }
 
-  &__right {
-    position: absolute;
-    height: 100%;
-    width: 23vw;
-    right: 0;
-    overflow: hidden;
+    & > p {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 15%;
 
-    @include hideVideo {
-      display: none;
+      @include mobile {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-bottom: 7rem;
+      }
     }
-  }
 
-  &__video {
-    height: 100%;
-    object-fit: cover;
+    & > button {
+      font-size: 2rem;
+      padding: 1.5rem 5rem;
+      border-radius: 10px;
+      border: none;
+      background-color: $Pale-rose;
+      position: relative;
+      font-weight: 500;
+
+      @include tablet {
+        font-size: 1.8rem;
+      }
+
+      & > img {
+        width: 15%;
+        position: absolute;
+        top: 22%;
+        right: 5%;
+      }
+    }
   }
 
   &__title {
     font-weight: 500;
-    font-size: 4.5vw;
-    line-height: 5.5vw;
-    font-weight: 400;
+    font-size: 3.5vw;
+    margin-bottom: 12%;
 
     @include mobile {
-      font-size: 2.5rem;
-      line-height: 3.5rem;
+      font-size: 3rem;
+      margin-bottom: 4rem;
     }
 
-    &::before {
-      content: "Discord";
-      color: $Light-steel-blue;
-      font-weight: 500;
-      @include mobile {
-        font-size: 3.5rem;
-      }
-    }
     & > span {
-      font-family: "Gwendolyn";
-      font-weight: 700;
-      font-size: 10vw;
-      margin-right: 0.7vw;
-
-      @include mobile {
-        font-size: 5rem;
-        margin-right: 0.5rem;
-      }
+      font-weight: 600;
     }
   }
 
   &__discord {
-    width: 4vw;
-    margin-left: 1vw;
-    margin-right: 0.2rem;
-
-    @include mobile {
-      width: 45px;
-      margin-left: 1rem;
-    }
+    width: 10%;
   }
-  &__button {
-    display: inline-block;
+
+  &__right {
+    width: 50%;
+    height: 40vw;
     position: relative;
-    color: black;
-    font-size: 35%;
-    font-weight: 500;
-    width: 15vw;
-    height: 4.5vw;
-    margin: 1.5vw 0 0 1.5vw;
-    background-color: $Pale-rose;
-    text-align: center;
-    border: none;
-    border-radius: 50px;
-    vertical-align: top;
 
-    @include mobile {
-      font-size: 1rem;
-      width: 10rem;
-      height: 2.5rem;
-      margin: 0.5rem 0 0 1rem;
+    @include tablet {
+      height: 55vw;
     }
-  }
-
-  &__arrow {
-    width: 12%;
-    position: absolute;
-    right: 8%;
-    top: 30%;
-    @include mobile {
-      width: 15%;
-      right: 6%;
-      top: 21%;
-    }
-  }
-
-  &__landing {
-    position: relative;
-    display: flex;
-    margin-top: 3rem;
-  }
-
-  &__landimg {
-    width: 30vw;
-    height: 31vw;
-    object-fit: cover;
-    border-radius: 10px;
 
     @include mobile {
       display: none;
     }
   }
-
-  &__landbg {
-    display: none;
-
-    @include mobile {
-      display: block;
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 3rem;
-    }
-  }
-
-  &__landdec {
-    padding: 0 2rem;
+  &__image {
+    width: 100%;
     height: 100%;
-
-    @include mobile {
-      padding: 0.5rem;
-    }
-
-    & > p {
-      font-size: 1.5vw;
-      font-weight: 400;
-      color: #f1f1f1;
-
-      @include mobile {
-        font-weight: 400;
-        padding: 0 0.5rem;
-        font-size: 1.2rem;
-        width: 100%;
-      }
-    }
-  }
-
-  &__tabs {
-    position: relative;
-
-    @include mobile {
-      width: min-content;
-      margin-top: -4.5rem;
-      background-color: rgb(15, 15, 15);
-      padding: 0.5rem 1.5rem 0 0;
-      border-top-right-radius: 50px;
-    }
-  }
-
-  &__tab {
-    width: 21vw;
-    height: 4vw;
-    border: none;
-    color: white;
-    font-size: 1.3vw;
-    font-family: inherit;
-    font-weight: 500;
-    text-align: center;
-    border-radius: 5px;
-    margin-top: 1.5vw;
-    background-color: $Silver-tree;
-    margin-left: 5vw;
-
-    &:first-of-type {
-      background-color: $Light-steel-blue;
-      margin-left: 0;
-    }
-
-    @include mobile {
-      font-size: 1rem;
-      width: 12rem;
-      height: 2.5rem;
-      margin-left: 3rem;
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  &__quarter {
-    position: absolute;
-    left: 22.5vw;
-    top: 1.5vw;
-    width: 3.5vw;
-    height: 4vw;
-    background-color: $Pale-rose;
-    border-radius: 0 3vw 0 0;
-
-    @include mobile {
-      width: 2rem;
-      height: 2.5rem;
-      left: 13rem;
-      top: 1rem;
-      border-radius: 0 2rem 0 0;
-    }
+    object-fit: cover;
+    border-radius: 20px;
   }
 
   &__next {
     position: absolute;
-    right: 0;
     bottom: 0;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 1.5rem;
-    text-decoration: underline;
-    padding-right: 1vw;
-    font-size: 1.5vw;
+    left: 0;
+    border-top-right-radius: 1rem;
+    border-width: 1rem 1rem 0 0;
+    border-color: $background;
+    border-style: solid;
+    width: 9rem;
+    height: 6rem;
 
-    & > span {
-      @include mobile {
-        display: none;
+    & > button {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom-left-radius: 10px;
+      &:active {
+        transition: all 0.2s ease;
+        transform: translateY(0.5rem);
       }
-    }
-    @include mobile {
-      margin-bottom: -3rem;
-      margin-right: 0.5rem;
-    }
-  }
-  &__nextbt {
-    height: 3vw;
-    margin-left: 1vw;
-
-    @include mobile {
-      height: 3rem;
     }
   }
 }

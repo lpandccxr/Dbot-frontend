@@ -6,6 +6,12 @@
 
   @include mobile {
     width: 100vw;
+    background: linear-gradient(
+      to bottom,
+      $background 0%,
+      rgba(15, 15, 15, 0.788) 75%,
+      rgba(15, 15, 15, 0.546) 100%
+    );
     font-weight: 500;
     position: fixed;
     display: flex;
@@ -13,7 +19,6 @@
     font-size: 2rem;
     z-index: 10;
     padding: 1rem 0 1.5rem 0;
-    margin-bottom: 3rem;
   }
   &__menu {
     display: none;
@@ -24,19 +29,6 @@
       background-color: transparent;
       position: absolute;
       left: 1rem;
-    }
-  }
-
-  &__vbg {
-    display: none;
-
-    @include mobile {
-      display: block;
-      position: absolute;
-      width: 100vw;
-      left: 0;
-      bottom: 0.5rem;
-      z-index: -1;
     }
   }
 }
