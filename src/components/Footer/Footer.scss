@@ -9,7 +9,7 @@
 
   &__container {
     width: 90%;
-    max-width: 1440px;
+    max-width: 1600px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: end;
-    font-size: 1.1rem;
+    font-size: max(1vw, 1.1rem);
     text-decoration: underline;
     cursor: pointer;
     margin-bottom: 3vw;
