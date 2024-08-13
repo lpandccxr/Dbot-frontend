@@ -1,8 +1,10 @@
 import "./Team.scss";
 import Footer from "../../components/Footer/Footer";
-import { Link } from "react-router-dom";
 import sample from "../../assets/sample.png";
 import raven from "../../assets/team/raven.jpg";
+import github from "../../assets/icons/github.png";
+import linkedin from "../../assets/icons/linkedin.png";
+import email from "../../assets/icons/email.png";
 import { motion, useMotionValue } from "framer-motion";
 import back from "../../assets/icons/back.svg";
 import forward from "../../assets/icons/forward.svg";
@@ -137,6 +139,17 @@ export default function Team() {
                 <img src={member.avatar} alt="avatar" />
                 <div className="team__dec">
                   <div className="team__position">
+                    <div className="team__social">
+                      <a href={member.github} target="_blank">
+                        <img src={github} alt="github" />
+                      </a>
+                      <a href={member.linkedin} target="_blank">
+                        <img src={linkedin} alt="linkedin" />
+                      </a>
+                      <a href={`mailto: ${member.email}`} target="_blank">
+                        <img src={email} alt="email" />
+                      </a>
+                    </div>
                     <h3>{member.name}</h3>
                     <span style={{ textDecoration: "underline" }}>
                       {member.position}
