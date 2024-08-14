@@ -147,7 +147,7 @@
   &__member {
     height: fit-content;
     padding-bottom: 2vw;
-    width: min(55%, 27.5vw);
+    width: min(58%, 27.5vw);
     margin-right: 5vw;
     flex: 0 0 auto;
     background-color: rgb(32, 32, 32);
@@ -199,7 +199,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5vw 2vw;
+    padding: 0.5vw 1.5vw;
     margin-bottom: 0.5vw;
     position: relative;
 
@@ -217,7 +217,6 @@
     & > span {
       font-size: min(1.5rem, 1.1vw);
       overflow-wrap: break-word;
-      max-width: 13rem;
 
       @include mobile {
         font-size: 1rem;

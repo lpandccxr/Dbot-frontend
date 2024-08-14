@@ -2,6 +2,7 @@ import "./Team.scss";
 import Footer from "../../components/Footer/Footer";
 import sample from "../../assets/sample.png";
 import raven from "../../assets/team/raven.jpg";
+import dan from "../../assets/team/dan.png";
 import github from "../../assets/icons/github.png";
 import linkedin from "../../assets/icons/linkedin.png";
 import email from "../../assets/icons/email.png";
@@ -12,7 +13,7 @@ import { useEffect, useState } from "react";
 
 export default function Team() {
   const [imgIndex, setImgIndex] = useState(0);
-  const [dargging, setDargging] = useState(false);
+  const [_dargging, setDargging] = useState(false);
   const [head, setHead] = useState(true);
   const [end, setEnd] = useState(false);
   const dragX = useMotionValue();
@@ -47,12 +48,12 @@ export default function Team() {
   const memebrs = [
     {
       name: "Dan",
-      position: "Lead ML Engineer",
-      avatar: sample,
+      position: "Organizer, ML Engineer",
+      avatar: dan,
       linkedin: "https://www.linkedin.com/in/ravenlei/",
       github: "https://github.com/lpandccxr",
       email: "lpreveton@gmail.com",
-      dec: "You can see how this is so much nicer to look at. You will get the whitespace included in the string, but since we're just creating HTML markup, it doesn't really matter.",
+      dec: "Passionate engineer, dedicated to creating the best products with the most impact. I work on the backend and ML.",
     },
     {
       name: "Raven",
@@ -61,7 +62,7 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/raven-lei/",
       github: "https://github.com/lpandccxr",
       email: "lpreveton@gmail.com",
-      dec: "Experienced front-end developer specializing in React, Node.js, Sass, Next.js, and Tailwind CSS, with a passion for building responsive, user-centric web applications.",
+      dec: "Experienced front-end developer specializing in React, with a passion for building responsive, user-centric web applications.",
     },
     {
       name: "Azka",
