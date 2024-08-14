@@ -26,14 +26,57 @@
     max-width: 1440px;
   }
 
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__title {
-    font-size: min(6rem, 5vw);
-    margin-bottom: 2vw;
+    margin: 3vw 0 4vw 0;
+    display: flex;
+    align-items: center;
+
+    & > h1 {
+      font-size: min(3.5vw, 4rem);
+      margin-right: 2.5vw;
+      @include mobile {
+        font-size: 2.9rem;
+      }
+    }
+
+    & > img {
+      width: 15%;
+    }
 
     @include mobile {
-      font-size: 2.9rem;
-      margin-bottom: 2rem;
+      margin: 2rem 0;
     }
+  }
+
+  &__pics {
+    display: flex;
+
+    & > img:nth-child(3) {
+      width: 30%;
+    }
+  }
+
+  &__iconGp {
+    position: relative;
+    margin-right: -5vw;
+
+    & > img:first-child {
+      width: 70%;
+    }
+  }
+
+  &__star {
+    width: 30%;
+    position: absolute;
+    left: 15%;
+    top: 30%;
   }
 
   &__list {

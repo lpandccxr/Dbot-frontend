@@ -1,5 +1,9 @@
 import Footer from "../../components/Footer/Footer";
 import copy from "../../assets/icons/copy.png";
+import group from "../../assets/icons/group.svg";
+import meteor from "../../assets/icons/meteor.svg";
+import pices from "../../assets/icons/pices.svg";
+import star from "../../assets/icons/star.svg";
 import "./Commands.scss";
 import { motion } from "framer-motion";
 
@@ -11,6 +15,7 @@ export default function Commands() {
       type: "Note: ",
       note: "channel is case sensitive.",
       example: "!join General",
+      color: "#C5F73A",
     },
     {
       command: "!strac",
@@ -19,6 +24,7 @@ export default function Commands() {
       type: "Note: ",
       note: "channel is case sensitive.",
       example: "!stc general",
+      color: "#8E84FF",
     },
     {
       command: "!rec",
@@ -26,6 +32,7 @@ export default function Commands() {
       type: "Prerequisite: ",
       note: "bot must already be in a voice channel.",
       example: "!rec",
+      color: "#F52578",
     },
     {
       command: "!sttsc",
@@ -33,6 +40,7 @@ export default function Commands() {
         "bot sets text to speech channel, typically the same as transcription channel",
       note: "",
       example: "!sttsc general",
+      color: "#F1F1F1",
     },
     {
       command: "!startts",
@@ -40,6 +48,7 @@ export default function Commands() {
       type: "Prerequisite: ",
       note: "bot must already be in a voice channel.",
       example: "!startts",
+      color: "#C5F73A",
     },
     {
       command: "!storec",
@@ -47,6 +56,7 @@ export default function Commands() {
         "bot stops recording all currently active voices, does not transcribe previously active voices. Optional list of voices to stop recording, prevents future recording and transcribing",
       note: "",
       example: "!storec, !storec danhan Raven elizabeth",
+      color: "#F52578",
     },
     {
       command: "!disconnect",
@@ -55,6 +65,7 @@ export default function Commands() {
       type: "Prerequisite: ",
       note: "bot must already be in a voice channel.",
       example: "!disconnect",
+      color: "#F1F1F1",
     },
     {
       command: "!enavc",
@@ -62,6 +73,7 @@ export default function Commands() {
       type: "Prerequisite: ",
       note: "bot must already be in a voice channel.",
       example: "!enavc",
+      color: "#C5F73A",
     },
   ];
 
@@ -69,10 +81,20 @@ export default function Commands() {
     <div className="commands">
       <div className="commands__container">
         <div className="commands__content">
-          <div className="hero__top">
-            <span>Able</span>
+          <div className="commands__top">
+            <div className="commands__title">
+              <h1>Commands List</h1>
+              <img src={meteor} alt="meteor" />
+            </div>
+            <div className="commands__pics">
+              <div className="commands__iconGp">
+                <img src={pices} alt="pices" />
+                <img src={star} alt="star" className="commands__star" />
+              </div>
+
+              <img src={group} alt="group" />
+            </div>
           </div>
-          <h1 className="commands__title">Commands List</h1>
           <motion.div
             className="commands__list"
             initial={{ y: "100%", opacity: 0 }}
@@ -85,7 +107,10 @@ export default function Commands() {
                 key={index}
                 style={{ gridArea: `div${index + 1}` }}
               >
-                <div className="commands__itemHead">
+                <div
+                  className="commands__itemHead"
+                  style={{ backgroundColor: `${command.color}` }}
+                >
                   <span> {command.command}</span>
                   <div
                     className="commands__copy"
