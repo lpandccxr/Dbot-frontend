@@ -189,6 +189,10 @@
         line-height: 1.2rem;
       }
     }
+
+    @include mobile {
+      padding: 0.2rem 0.5rem;
+    }
   }
 
   &__position {
@@ -214,6 +218,10 @@
       font-size: min(1.5rem, 1.1vw);
       overflow-wrap: break-word;
       max-width: 13rem;
+
+      @include mobile {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -260,6 +268,11 @@
       &:active {
         scale: 0.9;
       }
+    }
+
+    @include mobile {
+      top: -210%;
+      left: -5%;
     }
   }
 }

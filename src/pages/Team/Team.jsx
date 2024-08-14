@@ -56,7 +56,7 @@ export default function Team() {
     },
     {
       name: "Raven",
-      position: "Lead Front-end Developer",
+      position: "Lead Frontend Developer",
       avatar: raven,
       linkedin: "https://www.linkedin.com/in/raven-lei/",
       github: "https://github.com/lpandccxr",
