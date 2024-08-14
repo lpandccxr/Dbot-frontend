@@ -212,7 +212,8 @@
 
     & > span {
       font-size: min(1.5rem, 1.1vw);
-      max-width: 12rem;
+      overflow-wrap: break-word;
+      max-width: 13rem;
     }
   }
 
