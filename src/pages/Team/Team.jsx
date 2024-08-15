@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Team() {
   const [imgIndex, setImgIndex] = useState(0);
-  const [_dargging, setDargging] = useState(false);
+  const [dargging, setDargging] = useState(false);
   const [head, setHead] = useState(true);
   const [end, setEnd] = useState(false);
   const dragX = useMotionValue();
