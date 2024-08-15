@@ -1,5 +1,6 @@
 import "./Hero.scss";
-import discord from "../../assets/icons/discord.png";
+import icons from "../../assets/icons/titleIcons.svg";
+import underline from "../../assets/underline.svg";
 import arrow from "../../assets/icons/arrow.svg";
 import arrowDown from "../../assets/icons/arrow-down.svg";
 import landing from "../../assets/landing.jpg";
@@ -23,20 +24,39 @@ export default function Hero({ theRef, top }) {
             transition={{ duration: 1, delay: 0.5, type: "spring" }}
           >
             <h1 className="hero__title">
-              Empowering{" "}
-              <span>
-                Disabled{" "}
-                <img src={discord} alt="discord" className="hero__discord" />{" "}
-              </span>{" "}
-              Individuals with Able Bot
+              Empowering
+              <span
+                style={{
+                  color: "#F52578",
+                  display: "flex",
+                  alignContent: "center",
+                }}
+              >
+                Disabled
+                <img src={icons} alt="discord" className="hero__discord" />
+              </span>
+              Individuals with
+              <span style={{ color: "#8EB4FF", fontWeight: "500" }}>
+                {" "}
+                Able Bot.
+              </span>
+              <img
+                src={underline}
+                alt="underline"
+                className="hero__underline"
+              />
             </h1>
             <p>
               Discord bot designed to empower disabled and partially disabled
               users by making communication seamless and efficient
             </p>
-            <button>
-              Get Started <img src={arrow} alt="arrow" />
-            </button>
+            <a
+              href=" https://discord.com/oauth2/authorize?client_id=1271565367910862910&permissions=33411&integration_type=0&scope=bot"
+              target="_blank"
+            >
+              <span>Invite bot</span>
+              <img src={arrow} alt="arrow" />
+            </a>
           </motion.div>
           <motion.div
             className="hero__right"

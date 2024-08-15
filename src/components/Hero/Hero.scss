@@ -15,7 +15,7 @@
   @include mobile {
     padding-top: 8rem;
     min-height: auto;
-    padding-bottom: 10rem;
+    padding-bottom: 9rem;
     position: relative;
     background-image: url("../../assets/landing.jpg");
     background-position: center;
@@ -84,7 +84,7 @@
 
   &__left {
     width: 50%;
-    padding: 5% 13% 0 0;
+    padding: 5% 11% 0 0;
 
     @include mobile {
       width: 100%;
@@ -100,18 +100,35 @@
       @include mobile {
         font-size: 1.5rem;
         line-height: 2rem;
-        margin-bottom: 7rem;
+        margin-bottom: 5rem;
+        text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
       }
     }
 
-    & > button {
+    & > a {
       font-size: 2rem;
       padding: 1.5rem 5rem;
+      display: inline-block;
       border-radius: 10px;
       border: none;
-      background-color: $Pale-rose;
+      background-color: #c5f73a;
+      color: #1c1010;
       position: relative;
       font-weight: 500;
+
+      @include mobile {
+        width: 95%;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:active {
+        scale: 0.95;
+        color: #c5f73a;
+        background-color: #f52578;
+      }
 
       @include tablet {
         font-size: 1.8rem;
@@ -128,12 +145,15 @@
 
   &__title {
     font-weight: 500;
-    font-size: 3.5vw;
+    font-size: 3.2vw;
+    line-height: 4.5vw;
     margin-bottom: 12%;
 
     @include mobile {
       font-size: 3rem;
+      line-height: 4rem;
       margin-bottom: 4rem;
+      text-shadow: 4px 3px 0 #7a7a7a;
     }
 
     & > span {
@@ -142,12 +162,16 @@
   }
 
   &__discord {
-    width: 10%;
+    width: 45%;
+  }
+
+  &__underline {
+    display: block;
+    width: 50%;
   }
 
   &__right {
     width: 50%;
-    height: 40vw;
     position: relative;
 
     @include tablet {

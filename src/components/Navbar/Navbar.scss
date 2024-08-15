@@ -71,6 +71,7 @@
     margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
+    position: relative;
 
     @include mobile {
       align-items: start;
@@ -148,5 +149,16 @@
       position: relative;
       line-height: 2rem;
     }
+  }
+
+  &__status {
+    width: 75%;
+    aspect-ratio: 1;
+    background-color: #f52578;
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    left: 13%;
+    transition: all 0.2s ease;
   }
 }

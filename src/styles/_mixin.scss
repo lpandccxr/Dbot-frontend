@@ -11,7 +11,7 @@
 // desktop breakpoint
 
 @mixin desktop {
-  @media screen and (min-width: $desktop-breakpoint) {
+  @media screen and (max-width: $desktop-breakpoint) {
     @content;
   }
 }

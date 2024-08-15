@@ -2,12 +2,14 @@ import "./Navbar.scss";
 import home from "../../assets/icons/home.png";
 import command from "../../assets/icons/command.png";
 import about from "../../assets/icons/about.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function Navbar({ set, nav }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
+  const location = useLocation();
+  const [style, setStyle] = useState({});
 
   const handleClick = (link) => {
     set("nav__off");
@@ -30,6 +32,16 @@ export default function Navbar({ set, nav }) {
       set("");
     }
   });
+
+  useEffect(() => {
+    if (location.pathname === "/commands") {
+      setStyle({ top: "32%" });
+    } else if (location.pathname === "/team") {
+      setStyle({ top: "72%" });
+    } else {
+      setStyle({ top: "-5%" });
+    }
+  }, [location]);
 
   return (
     <nav className={"navbar " + nav}>
@@ -61,6 +73,7 @@ export default function Navbar({ set, nav }) {
           </NavLink>
           <span className="navbar__tooltiptext">About</span>
         </li>
+        <div className="navbar__status" style={style}></div>
       </ul>
     </nav>
   );
