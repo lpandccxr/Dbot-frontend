@@ -1,5 +1,6 @@
 import "./Feature.scss";
 import { motion } from "framer-motion";
+import { ReactTyped } from "react-typed";
 import illustration from "../../assets/illustration.svg";
 import transcript from "./../../assets/transcription.png";
 import talkback from "./../../assets/speech.png";
@@ -8,12 +9,14 @@ import msg from "../../assets/msg.png";
 import v1 from "../../assets/icons/Variant1.png";
 import v2 from "../../assets/icons/Variant2.png";
 import able from "../../assets/icons/able2.svg";
+import disord from "../../assets/icons/able.svg";
+import like from "../../assets/like.svg";
 
 export default function Feature({ toFeature }) {
   const firstOne = {
     image: transcript,
     title: "Transcription",
-    dec: "The bot provides real-time transcription of spoken conversations into text,ensuring seamless communication.",
+    dec: "The bot provides real-time transcription of spoken conversations into text, ensuring seamless communication.",
   };
 
   const secondOne = {
@@ -48,7 +51,51 @@ export default function Feature({ toFeature }) {
         </div>
         <div className="features__cards">
           <div className="features__cardOne features__cardHover features__card">
-            <img src={firstOne.image} alt="image" />
+            <div style={{ position: "relative" }}>
+              <img
+                src={firstOne.image}
+                alt="image"
+                className="features__imgOne"
+              />
+              <div className="features__window">
+                <div style={{ height: "100%" }}>
+                  <img src={disord} alt="disord" style={{ width: "50px" }} />
+                </div>
+                <div style={{ width: "80%" }}>
+                  <b>Able</b>
+                  <span
+                    style={{
+                      fontSize: "0.8rem",
+                      marginLeft: "0.5rem",
+                      backgroundColor: "#5865F2",
+                      borderRadius: "10px",
+                      padding: "0 0.3rem",
+                      lineHeight: "1rem",
+                    }}
+                  >
+                    BOT
+                  </span>
+                  <div className="features__typing">
+                    <span>
+                      <b>Person 1: </b>
+                      <ReactTyped
+                        strings={[
+                          "Please transcript &quot;Hello world&quot; to voice message.",
+                        ]}
+                        typeSpeed={100}
+                        backSpeed={20}
+                        loop
+                      />
+                    </span>
+                  </div>
+                  <img
+                    src={like}
+                    alt="like"
+                    style={{ position: "absolute", bottom: "5%" }}
+                  />
+                </div>
+              </div>
+            </div>
             <div className="features__decOne">
               <h2>{firstOne.title}</h2>
               <p>{firstOne.dec}</p>
