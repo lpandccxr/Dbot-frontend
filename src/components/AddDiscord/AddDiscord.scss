@@ -86,7 +86,7 @@
     }
 
     & > img:first-child {
-      @include mobile {
+      @include desktop {
         width: 100%;
       }
     }
@@ -95,6 +95,17 @@
       position: absolute;
       top: 8%;
       right: 0;
+
+      @include desktop {
+        width: 15%;
+        right: 24%;
+        top: 10%;
+      }
+
+      @include tablet {
+        width: 15%;
+        right: 25%;
+      }
 
       @include mobile {
         width: 20%;

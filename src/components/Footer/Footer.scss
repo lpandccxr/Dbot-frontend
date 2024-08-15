@@ -49,6 +49,10 @@
     top: -2.5rem;
     right: 0;
 
+    @include tablet {
+      top: -2rem;
+    }
+
     @include mobile {
       top: -1.5rem;
     }
@@ -56,6 +60,10 @@
     & > img {
       width: 5rem;
       animation: move 0.8s linear infinite;
+
+      @include tablet {
+        width: 4rem;
+      }
       @include mobile {
         width: 3rem;
       }
