@@ -1,9 +1,9 @@
 import Footer from "../../components/Footer/Footer";
-import copy from "../../assets/icons/copy.png";
 import group from "../../assets/icons/group.svg";
 import meteor from "../../assets/icons/meteor.svg";
 import pices from "../../assets/icons/pices.svg";
 import star from "../../assets/icons/star.svg";
+import Command from "../../components/Command/Command";
 import "./Commands.scss";
 import { motion } from "framer-motion";
 
@@ -102,38 +102,7 @@ export default function Commands() {
             transition={{ duration: 0.7 }}
           >
             {commands.map((command, index) => (
-              <div
-                className="commands__item"
-                key={index}
-                style={{ gridArea: `div${index + 1}` }}
-              >
-                <div
-                  className="commands__itemHead"
-                  style={{ backgroundColor: `${command.color}` }}
-                >
-                  <span> {command.command}</span>
-                  <div
-                    className="commands__copy"
-                    onClick={() => {
-                      navigator.clipboard.writeText(command.command);
-                    }}
-                  >
-                    <span>Copied!</span>
-                    <img src={copy} alt="copy" />
-                  </div>
-                </div>
-
-                <p>
-                  {command.description}
-                  {command.note.length > 0 && (
-                    <span className="commands__note">
-                      <b>{command.type}</b>
-                      {command.note}
-                    </span>
-                  )}
-                </p>
-                <b>Expample: {command.example}</b>
-              </div>
+              <Command command={command} index={index} key={index} />
             ))}
           </motion.div>
         </div>

@@ -52,7 +52,7 @@ export default function Team() {
       avatar: dan,
       linkedin: "https://www.linkedin.com/in/ravenlei/",
       github: "https://github.com/lpandccxr",
-      email: "lpreveton@gmail.com",
+      email: "geoman970@gmail.com",
       dec: "Passionate engineer, dedicated to creating the best products with the most impact. I work on the backend and ML.",
     },
     {
