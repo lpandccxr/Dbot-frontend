@@ -1,8 +1,10 @@
 import "./Feature.scss";
 import { motion } from "framer-motion";
-import transcript from "./../../assets/features-transcription-img.png";
-import talkback from "./../../assets/features-talkback-img.png";
-import community from "./../../assets/features-community-img.png";
+import illustration from "../../assets/illustration.svg";
+import transcript from "./../../assets/transcription.png";
+import talkback from "./../../assets/speech.png";
+import community from "./../../assets/community-img-bg.png";
+import msg from "../../assets/msg.png";
 
 export default function Feature({ toFeature }) {
   const firstOne = {
@@ -11,37 +13,38 @@ export default function Feature({ toFeature }) {
     dec: "The bot provides real-time transcription of spoken conversations into text,ensuring seamless communication.",
   };
 
-  const content = [
-    {
-      image: talkback,
-      title: "Text to Speech",
-      dec: "The bot reads text-aloud and can also vocalize a user's response,enhancing interaction.",
-    },
-    {
-      image: community,
-      title: "Community",
-      dec: "In addition to exceptional user support,we are an inclusive,friendly community that welcomes everyone.",
-    },
-  ];
+  const secondOne = {
+    image: talkback,
+    title: "Speech to Speech",
+    animate: "",
+    dec: "The bot reads text-aloud and can also vocalize a user's response, enhancing interaction and engagement.",
+  };
+
+  const thridOne = {
+    image: community,
+    title: "Community",
+    animate: msg,
+    dec: "In addition to exceptional user support,we are an inclusive,friendly community that welcomes everyone.",
+  };
 
   return (
-    <motion.div
-      ref={toFeature}
-      className="features"
-      initial={{ opacity: 0.2 }}
-      whileInView={{ opacity: 1, backgroundColor: "#f1f1f1" }}
-      transition={{ duration: 2 }}
-    >
+    <motion.div ref={toFeature} className="features">
       <div className="features__container">
         <div className="features__top">
           <h2 className="features__title">
-            How Able Makes Disord{" "}
-            <span style={{ fontWeight: "600" }}>Accessible</span> for
-            <span style={{ fontStyle: "italic" }}> Everyone</span>
+            How
+            <img />
+            <span style={{ color: "#8EB4FF" }}> Able</span> Makes Disord {}
+            <span style={{ fontWeight: "600", color: "#C5F73A" }}>
+              Accessible
+            </span>{" "}
+            for
+            <span style={{ fontStyle: "italic" }}> Everyone.</span>
           </h2>
+          <img src={illustration} alt="illustration" />
         </div>
         <div className="features__cards">
-          <div className="features__cardOne features__cardHover">
+          <div className="features__cardOne features__cardHover features__card">
             <img src={firstOne.image} alt="image" />
             <div className="features__decOne">
               <h2>{firstOne.title}</h2>
@@ -49,18 +52,32 @@ export default function Feature({ toFeature }) {
             </div>
           </div>
           <div className="features__cardContainer">
-            {content.map((item, index) => (
-              <div
-                className="features__cardTwo features__cardHover"
-                key={index}
-              >
-                <img src={item.image} alt="image" />
-                <div className="features__decTwo">
-                  <h2>{item.title}</h2>
-                  <p>{item.dec}</p>
-                </div>
+            <div className="features__cardTwo features__cardHover features__card">
+              <img src={secondOne.image} alt="image" />
+              <div className="features__decTwo">
+                <h2>{secondOne.title}</h2>
+                <p>{secondOne.dec}</p>
               </div>
-            ))}
+            </div>
+            <div className="features__cardTwo features__cardHover features__card">
+              <img src={thridOne.image} alt="image" />
+              <motion.img
+                src={thridOne.animate}
+                alt="msg"
+                className="features__animate"
+                animate={{ rotate: [0, 13, 10, -3, 0] }}
+                transition={{
+                  duration: 3.5,
+                  times: [0, 0.1, 0.1, 1.8, 0.1, 1],
+                  repeat: Infinity,
+                  repeatDelay: 1,
+                }}
+              />
+              <div className="features__decTwo">
+                <h2>{thridOne.title}</h2>
+                <p>{thridOne.dec}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

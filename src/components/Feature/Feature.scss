@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   padding: 3vw 0 4vw 0;
+  border-top: 1px solid #f1f1f1;
 
   @include mobile {
     padding-top: 5rem;
@@ -21,6 +22,13 @@
   &__top {
     width: 100%;
     display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+
+    & > img {
+      width: 20%;
+    }
 
     @include mobile {
       margin-bottom: 2rem;
@@ -28,6 +36,7 @@
   }
 
   &__title {
+    color: #f1f1f1;
     width: 70%;
     font-size: min(4rem, 3.5vw);
     font-weight: 500;
@@ -50,13 +59,18 @@
     }
   }
 
+  &__card {
+    border: 1px solid #f1f1f1;
+  }
+
   &__cardOne {
-    width: 35%;
+    width: 37%;
     height: 100%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    background-color: #d0e0ff;
 
     @include mobile {
       width: 100%;
@@ -67,7 +81,6 @@
 
     & > img {
       width: 100%;
-      object-fit: cover;
 
       @include mobile {
         width: 50%;
@@ -80,7 +93,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 9% 10%;
+    padding: 11% 10%;
 
     @include mobile {
       padding: 3% 5%;
@@ -97,7 +110,7 @@
     }
     & > p {
       font-size: min(1.5rem, 1.2vw);
-      line-height: 1.5vw;
+      line-height: 2vw;
       @include mobile {
         line-height: 1rem;
         font-size: 0.8rem;
@@ -106,7 +119,7 @@
   }
 
   &__cardContainer {
-    width: 62%;
+    width: 60%;
     display: flex;
     flex-direction: column;
 
@@ -119,10 +132,11 @@
   &__cardTwo {
     width: 100%;
     min-height: 19rem;
-    height: min(19.3vw, 24rem);
+    height: min(18.3vw, 24rem);
     display: flex;
     border-radius: 20px;
     overflow: hidden;
+    position: relative;
 
     @include tablet {
       min-height: auto;
@@ -143,10 +157,18 @@
       }
     }
 
-    & > img {
+    & > img:first-child {
       width: 50%;
       object-fit: cover;
     }
+  }
+
+  &__animate {
+    position: absolute;
+    width: 33%;
+    object-fit: cover;
+    top: 35%;
+    left: 4%;
   }
 
   &__decTwo {
@@ -171,7 +193,7 @@
     }
     & > p {
       font-size: min(1.2vw, 1.5rem);
-      line-height: 1.5vw;
+      line-height: 1.8vw;
       @include mobile {
         font-size: 0.8rem;
         line-height: 1rem;

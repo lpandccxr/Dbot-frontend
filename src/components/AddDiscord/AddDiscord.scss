@@ -17,6 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     @include mobile {
       flex-direction: column;
@@ -26,7 +27,7 @@
   }
 
   &__title {
-    font-size: 3vw;
+    font-size: 4vw;
     width: 60%;
     height: 70%;
     display: flex;
@@ -51,8 +52,8 @@
     width: fit-content;
     font-size: 2vw;
     font-weight: 600;
-    background-color: $Pale-rose;
-    padding: 2rem 7rem;
+    background-color: #c5f73a;
+    padding: 2rem 5rem;
     border-radius: 10px;
     margin-top: 2vw;
 
@@ -64,18 +65,25 @@
       margin-top: 3rem;
     }
 
+    &:hover {
+      text-decoration: none;
+    }
+
     &:active {
-      scale: 1.05;
+      scale: 0.95;
+      color: #c5f73a;
+      background-color: #f52578;
     }
   }
 
-  &__img {
+  &__animate {
     width: 40%;
+    position: relative;
 
-    @include mobile {
-      height: 20rem;
-      width: 100%;
-      margin: -2rem 0 -2rem -2rem;
+    & > img:nth-child(2) {
+      position: absolute;
+      top: 8%;
+      right: 0;
     }
   }
 }
