@@ -9,7 +9,7 @@ import email from "../../assets/icons/email.png";
 import { motion, useMotionValue } from "framer-motion";
 import back from "../../assets/icons/back.svg";
 import forward from "../../assets/icons/forward.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Team() {
   const [imgIndex, setImgIndex] = useState(0);
@@ -17,6 +17,7 @@ export default function Team() {
   const [head, setHead] = useState(true);
   const [end, setEnd] = useState(false);
   const dragX = useMotionValue();
+  const top = useRef(null);
 
   useEffect(() => {
     if (imgIndex === 0) {
@@ -86,7 +87,7 @@ export default function Team() {
   return (
     <div className="team">
       <div className="team__container">
-        <div className="hero__top">
+        <div className="hero__top" ref={top}>
           <span>Able</span>
         </div>
         <motion.div
@@ -178,7 +179,7 @@ export default function Team() {
         </motion.div>
       </div>
 
-      <Footer />
+      <Footer top={top} />
     </div>
   );
 }

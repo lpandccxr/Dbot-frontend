@@ -6,6 +6,7 @@ import star from "../../assets/icons/star.svg";
 import Command from "../../components/Command/Command";
 import "./Commands.scss";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 export default function Commands() {
   const commands = [
@@ -77,11 +78,13 @@ export default function Commands() {
     },
   ];
 
+  const top = useRef(null);
+
   return (
     <div className="commands">
       <div className="commands__container">
         <div className="commands__content">
-          <div className="commands__top">
+          <div className="commands__top" ref={top}>
             <div className="commands__title">
               <h1>Commands List</h1>
               <img src={meteor} alt="meteor" />
@@ -107,7 +110,7 @@ export default function Commands() {
           </motion.div>
         </div>
       </div>
-      <Footer />
+      <Footer top={top} />
     </div>
   );
 }

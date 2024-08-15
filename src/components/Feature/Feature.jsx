@@ -5,6 +5,9 @@ import transcript from "./../../assets/transcription.png";
 import talkback from "./../../assets/speech.png";
 import community from "./../../assets/community-img-bg.png";
 import msg from "../../assets/msg.png";
+import v1 from "../../assets/icons/Variant1.png";
+import v2 from "../../assets/icons/Variant2.png";
+import able from "../../assets/icons/able2.svg";
 
 export default function Feature({ toFeature }) {
   const firstOne = {
@@ -53,7 +56,14 @@ export default function Feature({ toFeature }) {
           </div>
           <div className="features__cardContainer">
             <div className="features__cardTwo features__cardHover features__card">
-              <img src={secondOne.image} alt="image" />
+              <div className="features__imgTwo">
+                <img src={secondOne.image} alt="image" />
+                <div className="features__twoAni">
+                  <img src={v1} alt="v1" />
+                  <img src={v2} alt="v2" />
+                  <img src={able} alt="able" />
+                </div>
+              </div>
               <div className="features__decTwo">
                 <h2>{secondOne.title}</h2>
                 <p>{secondOne.dec}</p>
