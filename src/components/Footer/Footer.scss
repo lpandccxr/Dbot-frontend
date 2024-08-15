@@ -6,13 +6,14 @@
   border-top: 1px solid rgba(255, 255, 255, 0.689);
   display: flex;
   justify-content: center;
+  position: relative;
 
   &__container {
     width: 90%;
     max-width: 1600px;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 2vw 0;
 
@@ -43,31 +44,22 @@
   }
 
   &__goTop {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    font-size: max(1vw, 1.1rem);
-    text-decoration: underline;
     cursor: pointer;
-    margin-bottom: 3vw;
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
 
     @include mobile {
-      font-size: 1rem;
-      position: absolute;
       right: 5vw;
       top: 10vw;
     }
 
     & > img {
-      width: 2rem;
-      margin-right: 1vw;
-
+      width: 5rem;
+      animation: move 0.8s linear infinite;
       @include mobile {
         width: 1.5rem;
       }
-    }
-    &:hover {
-      animation: move 0.8s linear infinite;
     }
 
     @keyframes move {
@@ -102,12 +94,9 @@
       color: aqua;
     }
 
-    &::before {
-      content: "";
-      height: 2vw;
-      width: 2vw;
-      background-color: aqua;
-      border-radius: 50%;
+    & > img {
+      height: 3vw;
+      width: 3vw;
       display: inline-block;
       margin-right: 0.5vw;
 

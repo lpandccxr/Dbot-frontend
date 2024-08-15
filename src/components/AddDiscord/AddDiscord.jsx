@@ -37,9 +37,8 @@ export default function AddDiscord() {
             animate={{ translateY: [0, -25, -25, 0] }}
             transition={{
               duration: 3.5,
-              times: [0, 0.2, 0.3, 1.8, 1],
+              times: [0, 0.2, 0.2, 1, 1.5],
               repeat: Infinity,
-              repeatDelay: 1,
             }}
           />
         </div>
