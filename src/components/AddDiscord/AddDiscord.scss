@@ -37,7 +37,7 @@
 
     @include mobile {
       font-size: 2rem;
-      width: 92%;
+      width: 100%;
       height: fit-content;
       margin-left: 2rem;
     }
@@ -58,7 +58,7 @@
     margin-top: 2vw;
 
     @include mobile {
-      width: 80%;
+      width: 70%;
       font-size: 1.5rem;
       padding: 1rem 0;
       text-align: center;
@@ -80,10 +80,26 @@
     width: 40%;
     position: relative;
 
+    @include mobile {
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    & > img:first-child {
+      @include mobile {
+        width: 100%;
+      }
+    }
+
     & > img:nth-child(2) {
       position: absolute;
       top: 8%;
       right: 0;
+
+      @include mobile {
+        width: 20%;
+        right: 25%;
+      }
     }
   }
 }

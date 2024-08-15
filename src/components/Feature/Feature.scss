@@ -72,6 +72,10 @@
     overflow: hidden;
     background-color: #d0e0ff;
 
+    @include desktop {
+      height: 44vw;
+    }
+
     @include mobile {
       width: 100%;
       flex-direction: row;
@@ -101,6 +105,19 @@
     padding: 0.8vw;
     display: flex;
     justify-content: space-between;
+
+    @include desktop {
+      width: 85%;
+    }
+
+    @include tablet {
+      font-size: 0.9rem;
+      padding: 0.8rem 0.2rem;
+    }
+
+    @include mobile {
+      font-size: 0.7rem;
+    }
   }
 
   &__typing {
@@ -109,6 +126,7 @@
 
   &__decOne {
     background-color: black;
+    height: 100%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -178,7 +196,6 @@
   }
 
   &__imgTwo {
-    width: 37%;
     position: relative;
 
     & > img {
@@ -192,12 +209,33 @@
     object-fit: cover;
     top: 35%;
     left: 4%;
+
+    @include mobile {
+      width: 40%;
+    }
   }
 
   &__twoAni {
     position: absolute;
     top: 13%;
     left: 22%;
+
+    @include desktop {
+      top: 8%;
+      left: 20%;
+    }
+
+    @include tablet {
+      scale: 0.8;
+      top: 0;
+      left: 8%;
+    }
+
+    @include mobile {
+      scale: 0.65;
+      left: -5%;
+      top: -15%;
+    }
 
     & > img:nth-child(1) {
       position: relative;
