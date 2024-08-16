@@ -222,13 +222,14 @@
       background-color: #83a3e0;
       border: none;
       border-bottom-left-radius: 10px;
-      &:active {
-        transition: all 0.2s ease;
-        transform: translateY(0.5rem);
-      }
 
       & > img {
         width: 50%;
+
+        &:active {
+          transition: all 0.2s ease;
+          transform: translateY(0.5rem);
+        }
       }
     }
   }
