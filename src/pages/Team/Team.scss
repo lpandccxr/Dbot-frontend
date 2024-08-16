@@ -160,7 +160,8 @@
     margin-right: 5vw;
     flex: 0 0 auto;
     background-color: rgb(32, 32, 32);
-    border-radius: 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 20px;
     overflow: hidden;
 
     &:last-child {

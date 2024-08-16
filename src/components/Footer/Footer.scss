@@ -62,7 +62,10 @@
 
     & > img {
       width: 5rem;
-      animation: move 0.8s linear infinite;
+
+      &:hover {
+        animation: move 0.8s linear infinite;
+      }
 
       @include tablet {
         width: 4rem;
