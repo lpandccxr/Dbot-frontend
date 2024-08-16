@@ -9,7 +9,7 @@ export default function Command({ command, index }) {
     setShow({ opacity: 1 });
     setTimeout(() => {
       setShow({});
-    }, 1500);
+    }, 2000);
   };
 
   return (

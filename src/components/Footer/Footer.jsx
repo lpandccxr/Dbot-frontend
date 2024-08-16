@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import arrow from "../../assets/icons/arrow-footer.svg";
 import "./Footer.scss";
 import question from "../../assets/icons/Question.svg";
-import hexagon from "../../assets/icons/Hexagon.svg";
+import hexagon from "../../assets/icons/team.png";
 import command from "../../assets/icons/Command.svg";
 
 export default function Footer({ top }) {
