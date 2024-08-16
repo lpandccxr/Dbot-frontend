@@ -1,0 +1,19 @@
+@use "./variables" as *;
+@use "./mixin" as *;
+@use "./typography" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+//fonts
+
+//
+a{
+    color: $white;
+    &:hover{
+        text-decoration: underline;
+    }
+}

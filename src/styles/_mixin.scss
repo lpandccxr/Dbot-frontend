@@ -2,7 +2,7 @@
 
 //Tablet breakpoint
 
-@mixin tablet {
+@mixin tabletMax {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
   }
@@ -11,7 +11,25 @@
 // desktop breakpoint
 
 @mixin desktop {
-  @media screen and (min-width: $desktop-breakpoint) {
+  @media screen and (max-width: $desktop-breakpoint) {
     @content;
   }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin text-style($size, $line-height, $weight) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
 }

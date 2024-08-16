@@ -1,0 +1,8 @@
+@use "../../styles/variables" as *;
+@use "../../styles/reset" as *;
+@use "../../styles/mixin" as *;
+
+.mainPage {
+  width: 100%;
+  overflow-x: hidden;
+}
