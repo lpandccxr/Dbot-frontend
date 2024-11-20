@@ -1,5 +1,7 @@
 # React + Vite
 
+This project has been merged to other repo: https://github.com/usernameawesome/CommsBot
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
